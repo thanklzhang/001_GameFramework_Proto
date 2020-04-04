@@ -1,0 +1,31 @@
+syntax="proto3";
+import "ResultCode.proto";
+package GC2LS;
+
+enum MsgId
+{
+	First = 0;;
+
+	Begin = 11000;
+
+    GC2LS_AskLogin = 11001;
+   
+    End = 11100;
+}
+
+message reqAskLogin
+{
+	string account = 1;
+	string password = 2;
+}
+
+message respAskLogin
+{
+	ResultCode err = 1;
+	bool isSuccess = 2;
+	string gateServerIp = 3;
+	int32 gateServerPort = 4;
+	string userId = 5;
+	string userAccount = 6;
+	string token = 7;
+}

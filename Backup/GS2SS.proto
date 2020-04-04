@@ -1,0 +1,37 @@
+syntax="proto3";
+
+package GS2SS;
+
+enum MsgId
+{
+	First = 0;
+
+	Begin = 20000;
+
+    
+    GS2SS_FromCS_CreateCombat = 20001;
+    GS2SS_FromCS_DestroyCombat = 20002;
+  
+
+    End = 20100;
+}
+
+
+message CreateCombat
+{
+
+	repeated PlayerLocation playerLocations = 1;
+	int32 roomId = 2;
+}
+
+message PlayerLocation
+{
+	string ip = 1;
+	int32 udpPort = 2;
+	int32 seat = 3;
+}
+
+message DestroyCombat
+{
+	int32 combatId = 1;
+}

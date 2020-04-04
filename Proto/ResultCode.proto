@@ -1,0 +1,9 @@
+syntax="proto3";
+
+enum ResultCode
+{
+	Success = 0;			//None
+	ERR_SystemErr = 1;		//系统错误
+	ERR_Unknown = 2;		//未知错误
+}
+

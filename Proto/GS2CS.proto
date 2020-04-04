@@ -1,0 +1,48 @@
+syntax="proto3";
+import "ResultCode.proto";
+package GS2CS;
+
+enum MsgId
+{
+	First = 0;
+
+	Begin = 15000;
+
+	GS2CS_UserLogin = 15001;
+
+    GS2CS_UserExit = 15002;
+    
+    //GS2CS_FromSS_CreateCombatFinish = 15500;
+    
+
+    End = 15100;
+}
+
+message reqUserLogin
+{
+	string account = 1;
+}
+
+message respUserLogin
+{
+	ResultCode err = 1;
+}
+
+message reqUserExit
+{
+	string account = 1;
+}
+
+message respUserExit
+{
+	ResultCode err = 1;
+}
+
+
+//message CreateCombatFinish
+//{
+//	int32 combatId = 1;
+//	int32 combatRoomId = 2;
+//}
+
+

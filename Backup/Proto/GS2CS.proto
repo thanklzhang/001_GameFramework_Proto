@@ -1,0 +1,24 @@
+syntax="proto3";
+
+package GS2CS;
+
+enum MsgId
+{
+	First = 0;
+
+	Begin = 14000;
+
+    GS2CS_UserExit = 14001;
+    
+    
+
+    End = 14100;
+}
+
+message UserExit
+{
+	string account = 1;
+}
+
+
+

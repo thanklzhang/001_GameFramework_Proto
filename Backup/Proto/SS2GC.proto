@@ -1,0 +1,21 @@
+syntax="proto3";
+import "NetCommon.proto";
+package SS2GC;
+
+enum MsgId
+{
+	First = 0;
+
+	Begin = 18000;
+    SS2GC_FrameAction = 18001;
+   
+
+    End = 18100;
+}
+
+message FrameAction
+{
+	NetCommon.CombatFrame currFrame = 1;
+	repeated NetCommon.CombatFrame notSyncFrames = 2;
+}
+

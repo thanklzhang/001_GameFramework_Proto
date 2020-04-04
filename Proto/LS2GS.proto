@@ -1,0 +1,32 @@
+syntax="proto3";
+import "ResultCode.proto";
+package LS2GS;
+
+enum MsgId
+{
+	First = 0;
+
+	Begin = 12000;
+    LS2GS_VerificationAskLogin = 12001;
+   
+
+    End = 12100;
+}
+
+message reqVerificationAskLogin
+{
+	string account = 1;
+	string password = 2;
+	int32 clientId = 3;//在 LS 上自动创建的 clientId
+}
+
+message respVerificationAskLogin
+{
+	ResultCode err = 1;
+	bool isSuccess = 2;
+	string gateServerIp = 3;
+	int32 gateServerPort = 4;
+	string userId = 5;
+	string userAccount = 6;
+	string token = 7;
+}
