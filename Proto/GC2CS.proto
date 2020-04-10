@@ -10,7 +10,9 @@ enum MsgId
 
     GC2CS_EnterGameService = 13001;//登录成功后 需要请求进入真正的游戏服务 也就是通过 发送到 GS 转发到 CS 验证后即可进入真正的游戏服务
     GC2CS_HeroList = 13002;
-
+    GC2CS_AddHeroLevel = 13003;
+	GC2CS_NotifyUpdateHeroes = 13004;
+	
     //GC2CS_StartMateCombat = 13500;
    
     End = 13100;
@@ -39,10 +41,33 @@ message respHeroList
 	repeated HeroInfo heroList = 1;
 }
 
+
+message reqAddHeroLevel
+{
+	int32 heroId = 1;
+}
+
+message respAddHeroLevel
+{
+	ResultCode err = 1;
+}
+
+message reqNotifyUpdateHeroes
+{
+	//目前只要到了下行
+}
+
+message respNotifyUpdateHeroes
+{
+	repeated HeroInfo heroInfoList = 1;
+}
+
+
 message HeroInfo
 {
 	int32 id = 1;
-	int32 level = 2;
+	int32 configId = 2;
+	int32 level = 3;
 }
 
 

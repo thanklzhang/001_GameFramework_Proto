@@ -9,7 +9,7 @@ protoc -I=%SRC% --csharp_out=Outpath %%i
 
 echo copy cs to client path ...
 
-copy Outpath\*.cs ..\JekoClient\GameClient\JekoClient\Assets\Script\Data\ProtobufData
+copy Outpath\*.cs ..\JekoClient\Assets\Script\Data\ProtobufData
 
 echo copy cs to server path ...
 
