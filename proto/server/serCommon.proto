@@ -1,0 +1,8 @@
+syntax="proto3";
+package NetProto;
+
+//server 之间异步调用上下文
+message ServerContext
+{
+	int32 uid = 1;
+}

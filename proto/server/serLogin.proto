@@ -1,0 +1,36 @@
+syntax="proto3";
+package NetProto;
+
+import "serCommon.proto";
+
+message csCheckLogin2S
+{
+	int32 connectId = 1;
+	string account = 2;
+	string password = 3;
+}
+
+message scCheckLogin2S
+{
+	int32 err = 1;
+	string ip = 2;
+	int32 port = 3;
+	int32 connectId = 4;
+	int32 uid = 5;
+	int32 token = 6;
+	
+}
+
+message csEnterGame2S
+{
+	int32 uid = 1;//待检测
+	int32 token = 2;
+	int32 cid = 3;//gate 中 连接该用户 id
+}
+
+message scEnterGame2S
+{
+	int32 err = 1;
+	int32 cid = 2;//gate 中 连接该用户 id
+	int32 uid = 3;
+}

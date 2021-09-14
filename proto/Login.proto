@@ -1,0 +1,32 @@
+syntax="proto3";
+package NetProto;
+
+message csCheckLogin
+{
+	string account = 1;
+	string password = 2;
+}
+
+message scCheckLogin
+{
+	int32 err = 1;
+	string ip = 2;
+	int32 port = 3;
+	int32 uid = 4;
+	int32 token = 5;
+}
+
+message csEnterGame
+{
+	int32 uid = 1;//待检测
+	int32 token = 2;
+}
+
+message scEnterGame
+{
+	int32 err = 1;
+}
+
+
+
+

@@ -1,21 +1,35 @@
 @echo off
 
-set SRC=Proto
-for %%i in (%SRC%\*.proto) do (    
-echo %%i  
-protoc -I=%SRC% --csharp_out=Outpath %%i
+set clientSRC=proto
+set clientDES=outpath
 
+set serSRC=proto\server
+set serDES=outpath\server
+
+REM set copyClientOutPath = "..\001_GameFramework_Client\Assets\Script\Data\Define\Protobuf"
+REM set copyServerOutPath = "GameServer\GameServer\ProtoMsgModel"
+
+echo gen client cs ----------------------------
+for %%i in (%clientSRC%\*.proto) do (    
+echo %%i  
+protoc -I=%clientSRC% --csharp_out=%clientDES% %%i
 )
 
-echo copy cs to client path ...
+echo gen server cs ----------------------------
+for %%i in (%serSRC%\*.proto) do (    
+echo %%i  
+protoc -I=%serSRC% --csharp_out=%serDES% %%i
+)
 
-copy Outpath\*.cs ..\JekoClient\Assets\Script\Data\ProtobufData
+echo copy cs to client path ----------------------------
+copy %clientDES%\*.cs "..\001_GameFramework_Client\Assets\Script\Data\Define\Protobuf"
 
-echo copy cs to server path ...
+echo copy cs to server path ----------------------------
+copy %serDES%\*.cs "..\001_GameFramework_Server\GameServer\Common\ProtoMsgModel\Server"
+copy %clientDES%\*.cs "..\001_GameFramework_Server\GameServer\Common\ProtoMsgModel"
 
-copy Outpath\*.cs ..\JekoAllServer\CommonCode\NetMsg
-
-python gen_cs_proto_msg_ids.py
+echo finish!
+::python gen_cs_proto_msg_ids.py
 
 
 pause

@@ -1,0 +1,14 @@
+syntax="proto3";
+package NetProto;
+
+message csUpdateHeroLevel
+{
+	int32 level = 1;
+}
+
+message scUpdateHeroLevel
+{
+	int32 err = 1;
+}
+
+
