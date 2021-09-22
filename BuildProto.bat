@@ -28,8 +28,10 @@ echo copy cs to server path ----------------------------
 copy %serDES%\*.cs "..\001_GameFramework_Server\GameServer\Common\ProtoMsgModel\Server"
 copy %clientDES%\*.cs "..\001_GameFramework_Server\GameServer\Common\ProtoMsgModel"
 
-echo finish!
 ::python gen_cs_proto_msg_ids.py
+
+echo finish!
+
 
 
 pause
