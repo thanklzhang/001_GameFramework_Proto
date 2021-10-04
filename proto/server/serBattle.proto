@@ -1,0 +1,52 @@
+syntax="proto3";
+package NetProto;
+
+import "serCommon.proto";
+import "Battle.proto";
+
+message PlayerBattleAttr
+{
+	int32 addedMaxHp = 4;
+	int32 addedAttack = 5;
+	int32 addedDefence = 6;
+}
+
+message SkillInitInfo
+{
+	int32 configId = 1;
+	int32 level = 2;
+
+}
+message EntityInitInfo
+{
+	int32 configId = 1;
+	PlayerBattleAttr attr = 2;
+	int32 level = 3;
+	int32 playerIndex = 4;//玩家索引 0 开始
+	repeated SkillInitInfo skillList = 5;
+}
+
+message PlayerInitInfo
+{
+	int32 uid = 1;
+	int32 playerIndex = 2;
+	int32 team = 3;
+	EntityInitInfo entityInitInfo = 4;
+	int32 level = 5;
+}
+
+
+//申请从战斗服务器创建一场战斗
+message csApplyCreateBattle2S
+{
+	int32 battleRoomId = 1;
+	int32 battleType = 2;//1 英雄试炼 (这里可能会走 activityId 和 活动 挂钩)
+	repeated PlayerInitInfo playerInfoList = 3;
+	int32 mapId = 4;
+}
+
+message scApplyCreateBattle2S
+{
+	int32 err = 1;
+	BattleInitArg battleInitArg = 2;
+}

@@ -1,0 +1,17 @@
+syntax="proto3";
+package NetProto;
+
+import "Common.proto";
+import "Battle.proto";
+
+//申请进入英雄试炼战斗
+message csApplyHeroExamBattle
+{
+	
+}
+
+message scApplyHeroExamBattle
+{
+	int32 err = 1;
+}
+

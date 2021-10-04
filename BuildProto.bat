@@ -18,7 +18,7 @@ protoc -I=%clientSRC% --csharp_out=%clientDES% %%i
 echo gen server cs ----------------------------
 for %%i in (%serSRC%\*.proto) do (    
 echo %%i  
-protoc -I=%serSRC% --csharp_out=%serDES% %%i
+protoc -I=%serSRC% --csharp_out=%serDES% %%i --proto_path=%clientSRC%
 )
 
 echo copy cs to client path ----------------------------

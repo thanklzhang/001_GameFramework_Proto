@@ -1,0 +1,188 @@
+syntax="proto3";
+package NetProto;
+
+import "Common.proto";
+
+//通知战斗创建
+message csNotifyCreateBattle
+{
+	
+}
+
+message scNotifyCreateBattle
+{
+	BattleInitArg battleInitArg = 1;
+}
+
+// 战斗初始化信息 ///////////////////////////////////////////////////
+message BattleInitArg
+{
+	int32 id = 1;
+	int32 roomId = 2;
+	BattlePlayerInitArg battlePlayerInitArg = 3;
+	BattleMapInitArg mapInitArg = 4;
+	BattleEntityInitArg entityInitArg = 5;
+	
+}
+
+message BattlePlayerInit
+{
+	int32 playerIndex = 1;
+	int32 team = 2;
+	int32 uid = 3;
+}
+
+message BattlePlayerInitArg
+{
+	repeated BattlePlayerInit playerList = 1;
+}
+
+message BattleMapInitArg
+{
+	
+}
+
+message BattleEntityInit
+{
+	int32 configId = 1;
+	int32 level = 2;
+	int32 playerIndex = 3;
+	Vector3Proto position = 4;
+	repeated BattleSkillInitArg skillInitList = 5;
+	int32 maxHp = 6;
+	int32 currHp = 7;
+}
+message BattleEntityInitArg
+{
+	repeated BattleEntityInit battleEntityInitList = 1;
+}
+
+message BattleSkillInitArg
+{
+	int32 configId = 1;
+	int32 level = 2;
+}
+
+/////////////////////////////////////////////////////////////////////
+
+//上报自己加载进度 理论上应该是异步消息 只是通知下进度
+message csPlayerLoadProgress
+{
+	
+}
+
+message scPlayerLoadProgress
+{
+	int32 err = 1;
+}
+
+//所有人加载好了
+message csNotifyAllPlayerLoadFinish
+{
+	
+}
+
+message scNotifyAllPlayerLoadFinish
+{
+	int32 err = 1;
+}
+
+//战前准备完成
+message csBattleReadyFinish
+{
+	
+}
+
+message scBattleReadyFinish
+{
+	int32 err = 1;
+}
+
+//战斗开始
+message csNotifyBattleStart
+{
+	
+}
+
+message scNotifyBattleStart
+{
+	int32 err = 1;
+}
+
+////////////////////////////-----玩家操作 start
+
+//移动单位
+message csMoveEntity
+{
+	int32 guid = 1;
+	Vector3Proto targetPos = 2;
+}
+
+message scMoveEntity
+{
+	int32 err = 1;
+}
+
+////////////////////////////-----玩家操作 end
+
+////////////////////////////-----服务端发来的关键战斗事件 start
+
+message BattleEntityProto
+{
+	int32 guid = 1;
+	int32 configId = 2;
+}
+
+//创建多个单位实体
+message scNotifyCreateEntities
+{
+	repeated BattleEntityProto battleEntities = 1;
+}
+
+message scNotifyEntityMove
+{
+	int32 guid = 1;
+	Vector3Proto startPos = 2;
+	Vector3Proto endPos = 3;
+	
+}
+
+////////////////////////////-----服务端发来的关键战斗事件 end
+
+
+//转发战斗协议给战斗服务器(输入)
+message csTransitionBattle
+{
+	int32 cmd = 1;
+	bytes data = 2;
+}
+message scTransitionBattle
+{
+	int32 err = 1;
+}
+
+//转发战斗协议给玩家(输出)
+message csTransitionBattle2Player
+{
+	
+}
+message scTransitionBattle2Player
+{
+	int32 cmd = 1;
+	bytes data = 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
