@@ -68,7 +68,7 @@ message BattleSkillInitArg
 //上报自己加载进度 理论上应该是异步消息 只是通知下进度
 message csPlayerLoadProgress
 {
-	
+	int32 progress = 1;//进度 千分比
 }
 
 message scPlayerLoadProgress

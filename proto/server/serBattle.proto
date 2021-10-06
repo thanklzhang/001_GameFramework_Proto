@@ -50,3 +50,25 @@ message scApplyCreateBattle2S
 	int32 err = 1;
 	BattleInitArg battleInitArg = 2;
 }
+
+//转发战斗协议给战斗服务器(输入)
+message csTransitionBattle2S
+{
+	int32 cmd = 1;
+	bytes data = 2;
+}
+message scTransitionBattle2S
+{
+	int32 err = 1;
+}
+
+//转发战斗协议给玩家(输出)
+message csTransitionBattle2Player2S
+{
+	
+}
+message scTransitionBattle2Player2S
+{
+	int32 cmd = 1;
+	bytes data = 2;
+}

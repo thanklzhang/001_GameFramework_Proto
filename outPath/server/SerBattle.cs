@@ -37,7 +37,11 @@ namespace NetProto {
             "VHlwZRgCIAEoBRIwCg5wbGF5ZXJJbmZvTGlzdBgDIAMoCzIYLk5ldFByb3Rv",
             "LlBsYXllckluaXRJbmZvEg0KBW1hcElkGAQgASgFIlQKFXNjQXBwbHlDcmVh",
             "dGVCYXR0bGUyUxILCgNlcnIYASABKAUSLgoNYmF0dGxlSW5pdEFyZxgCIAEo",
-            "CzIXLk5ldFByb3RvLkJhdHRsZUluaXRBcmdiBnByb3RvMw=="));
+            "CzIXLk5ldFByb3RvLkJhdHRsZUluaXRBcmciMQoUY3NUcmFuc2l0aW9uQmF0",
+            "dGxlMlMSCwoDY21kGAEgASgFEgwKBGRhdGEYAiABKAwiIwoUc2NUcmFuc2l0",
+            "aW9uQmF0dGxlMlMSCwoDZXJyGAEgASgFIh0KG2NzVHJhbnNpdGlvbkJhdHRs",
+            "ZTJQbGF5ZXIyUyI4ChtzY1RyYW5zaXRpb25CYXR0bGUyUGxheWVyMlMSCwoD",
+            "Y21kGAEgASgFEgwKBGRhdGEYAiABKAxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::NetProto.SerCommonReflection.Descriptor, global::NetProto.BattleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -46,7 +50,11 @@ namespace NetProto {
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.EntityInitInfo), global::NetProto.EntityInitInfo.Parser, new[]{ "ConfigId", "Attr", "Level", "PlayerIndex", "SkillList" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.PlayerInitInfo), global::NetProto.PlayerInitInfo.Parser, new[]{ "Uid", "PlayerIndex", "Team", "EntityInitInfo", "Level" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.csApplyCreateBattle2S), global::NetProto.csApplyCreateBattle2S.Parser, new[]{ "BattleRoomId", "BattleType", "PlayerInfoList", "MapId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.scApplyCreateBattle2S), global::NetProto.scApplyCreateBattle2S.Parser, new[]{ "Err", "BattleInitArg" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.scApplyCreateBattle2S), global::NetProto.scApplyCreateBattle2S.Parser, new[]{ "Err", "BattleInitArg" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.csTransitionBattle2S), global::NetProto.csTransitionBattle2S.Parser, new[]{ "Cmd", "Data" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.scTransitionBattle2S), global::NetProto.scTransitionBattle2S.Parser, new[]{ "Err" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.csTransitionBattle2Player2S), global::NetProto.csTransitionBattle2Player2S.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.scTransitionBattle2Player2S), global::NetProto.scTransitionBattle2Player2S.Parser, new[]{ "Cmd", "Data" }, null, null, null)
           }));
     }
     #endregion
@@ -1178,6 +1186,508 @@ namespace NetProto {
               battleInitArg_ = new global::NetProto.BattleInitArg();
             }
             input.ReadMessage(battleInitArg_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// 转发战斗协议给战斗服务器(输入)
+  /// </summary>
+  public sealed partial class csTransitionBattle2S : pb::IMessage<csTransitionBattle2S> {
+    private static readonly pb::MessageParser<csTransitionBattle2S> _parser = new pb::MessageParser<csTransitionBattle2S>(() => new csTransitionBattle2S());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<csTransitionBattle2S> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NetProto.SerBattleReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csTransitionBattle2S() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csTransitionBattle2S(csTransitionBattle2S other) : this() {
+      cmd_ = other.cmd_;
+      data_ = other.data_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csTransitionBattle2S Clone() {
+      return new csTransitionBattle2S(this);
+    }
+
+    /// <summary>Field number for the "cmd" field.</summary>
+    public const int CmdFieldNumber = 1;
+    private int cmd_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Cmd {
+      get { return cmd_; }
+      set {
+        cmd_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "data" field.</summary>
+    public const int DataFieldNumber = 2;
+    private pb::ByteString data_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString Data {
+      get { return data_; }
+      set {
+        data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as csTransitionBattle2S);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(csTransitionBattle2S other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Cmd != other.Cmd) return false;
+      if (Data != other.Data) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Cmd != 0) hash ^= Cmd.GetHashCode();
+      if (Data.Length != 0) hash ^= Data.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Cmd != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Cmd);
+      }
+      if (Data.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteBytes(Data);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Cmd != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Cmd);
+      }
+      if (Data.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Data);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(csTransitionBattle2S other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Cmd != 0) {
+        Cmd = other.Cmd;
+      }
+      if (other.Data.Length != 0) {
+        Data = other.Data;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Cmd = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Data = input.ReadBytes();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class scTransitionBattle2S : pb::IMessage<scTransitionBattle2S> {
+    private static readonly pb::MessageParser<scTransitionBattle2S> _parser = new pb::MessageParser<scTransitionBattle2S>(() => new scTransitionBattle2S());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<scTransitionBattle2S> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NetProto.SerBattleReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scTransitionBattle2S() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scTransitionBattle2S(scTransitionBattle2S other) : this() {
+      err_ = other.err_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scTransitionBattle2S Clone() {
+      return new scTransitionBattle2S(this);
+    }
+
+    /// <summary>Field number for the "err" field.</summary>
+    public const int ErrFieldNumber = 1;
+    private int err_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Err {
+      get { return err_; }
+      set {
+        err_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as scTransitionBattle2S);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(scTransitionBattle2S other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Err != other.Err) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Err != 0) hash ^= Err.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Err != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Err);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Err != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Err);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(scTransitionBattle2S other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Err != 0) {
+        Err = other.Err;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Err = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// 转发战斗协议给玩家(输出)
+  /// </summary>
+  public sealed partial class csTransitionBattle2Player2S : pb::IMessage<csTransitionBattle2Player2S> {
+    private static readonly pb::MessageParser<csTransitionBattle2Player2S> _parser = new pb::MessageParser<csTransitionBattle2Player2S>(() => new csTransitionBattle2Player2S());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<csTransitionBattle2Player2S> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NetProto.SerBattleReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csTransitionBattle2Player2S() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csTransitionBattle2Player2S(csTransitionBattle2Player2S other) : this() {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csTransitionBattle2Player2S Clone() {
+      return new csTransitionBattle2Player2S(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as csTransitionBattle2Player2S);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(csTransitionBattle2Player2S other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(csTransitionBattle2Player2S other) {
+      if (other == null) {
+        return;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class scTransitionBattle2Player2S : pb::IMessage<scTransitionBattle2Player2S> {
+    private static readonly pb::MessageParser<scTransitionBattle2Player2S> _parser = new pb::MessageParser<scTransitionBattle2Player2S>(() => new scTransitionBattle2Player2S());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<scTransitionBattle2Player2S> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NetProto.SerBattleReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scTransitionBattle2Player2S() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scTransitionBattle2Player2S(scTransitionBattle2Player2S other) : this() {
+      cmd_ = other.cmd_;
+      data_ = other.data_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scTransitionBattle2Player2S Clone() {
+      return new scTransitionBattle2Player2S(this);
+    }
+
+    /// <summary>Field number for the "cmd" field.</summary>
+    public const int CmdFieldNumber = 1;
+    private int cmd_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Cmd {
+      get { return cmd_; }
+      set {
+        cmd_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "data" field.</summary>
+    public const int DataFieldNumber = 2;
+    private pb::ByteString data_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString Data {
+      get { return data_; }
+      set {
+        data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as scTransitionBattle2Player2S);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(scTransitionBattle2Player2S other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Cmd != other.Cmd) return false;
+      if (Data != other.Data) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Cmd != 0) hash ^= Cmd.GetHashCode();
+      if (Data.Length != 0) hash ^= Data.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Cmd != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Cmd);
+      }
+      if (Data.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteBytes(Data);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Cmd != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Cmd);
+      }
+      if (Data.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Data);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(scTransitionBattle2Player2S other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Cmd != 0) {
+        Cmd = other.Cmd;
+      }
+      if (other.Data.Length != 0) {
+        Data = other.Data;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 8: {
+            Cmd = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            Data = input.ReadBytes();
             break;
           }
         }

@@ -10,6 +10,8 @@ enum ProtoIDs
 	EnterGame2S = 102;
 	
 	ApplyCreateBattle2S = 201;
+	TransitionBattle2S = 301;
+	TransitionBattle2Player2S = 302;
 	
 	//2000+ 客户端-----
 	CheckLogin = 2001;
