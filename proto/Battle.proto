@@ -131,6 +131,7 @@ message BattleEntityProto
 {
 	int32 guid = 1;
 	int32 configId = 2;
+	Vector3Proto position = 3;
 }
 
 //创建多个单位实体
