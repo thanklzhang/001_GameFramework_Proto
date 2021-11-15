@@ -31,10 +31,16 @@ enum ProtoIDs
 	
 	//玩家操作
 	MoveEntity = 3101;
+	UseSkill = 3102;
 	
 	//服务端发来的关键战斗事件
 	NotifyCreateEntities = 3201;
 	NotifyEntityMove = 3202;
+	NotifyEntityStopMove = 3203;
+	NotifyEntityReleaseSkill = 3204;
+	NotifyCreateSkillEffect = 3205;
+	NotifySkillEffectStartMove = 3206;
+	NotifySkillEffectDestroy = 3207;
 	
 	//转发战斗
 	TransitionBattle = 3301;

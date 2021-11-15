@@ -3,6 +3,22 @@ package NetProto;
 
 import "Common.proto";
 
+
+message BattleEntityProto
+{
+	int32 guid = 1;
+	int32 configId = 2;
+	int32 playerIndex = 3;
+	
+	repeated BattleSkillProto skillInitList = 4;
+	
+	Vector3Proto position = 5;
+	int32 level = 6;
+	int32 maxHp = 7;
+	int32 currHp = 8;
+	
+}
+
 //通知战斗创建
 message csNotifyCreateBattle
 {
@@ -17,24 +33,33 @@ message scNotifyCreateBattle
 // 战斗初始化信息 ///////////////////////////////////////////////////
 message BattleInitArg
 {
-	int32 id = 1;
-	int32 roomId = 2;
-	BattlePlayerInitArg battlePlayerInitArg = 3;
-	BattleMapInitArg mapInitArg = 4;
+	//战斗 guid
+	int32 guid = 1;
+	//战斗 表配置 id
+	int32 configId = 2;
+	//战斗所属 center server 中 room id
+	int32 roomId = 3;
+	//所有战斗玩家的初始信息
+	BattlePlayerInitArg battlePlayerInitArg = 4;
+	//所有实体信息
 	BattleEntityInitArg entityInitArg = 5;
+	//地图信息(暂时不用)
+	//BattleMapInitArg mapInitArg = 6;
+	
 	
 }
 
-message BattlePlayerInit
+message BattlePlayerProto
 {
 	int32 playerIndex = 1;
 	int32 team = 2;
 	int32 uid = 3;
+	int32 ctrlHeroGuid = 4;
 }
 
 message BattlePlayerInitArg
 {
-	repeated BattlePlayerInit playerList = 1;
+	repeated BattlePlayerProto playerList = 1;
 }
 
 message BattleMapInitArg
@@ -42,26 +67,17 @@ message BattleMapInitArg
 	
 }
 
-message BattleEntityInit
-{
-	int32 configId = 1;
-	int32 level = 2;
-	int32 playerIndex = 3;
-	Vector3Proto position = 4;
-	repeated BattleSkillInitArg skillInitList = 5;
-	int32 maxHp = 6;
-	int32 currHp = 7;
-}
 message BattleEntityInitArg
 {
-	repeated BattleEntityInit battleEntityInitList = 1;
+	repeated BattleEntityProto battleEntityInitList = 1;
 }
 
-message BattleSkillInitArg
+message BattleSkillProto
 {
 	int32 configId = 1;
 	int32 level = 2;
 }
+
 
 /////////////////////////////////////////////////////////////////////
 
@@ -123,29 +139,77 @@ message scMoveEntity
 	int32 err = 1;
 }
 
+message csUseSkill
+{
+	int32 guid = 1;
+	int32 skillId = 2;
+	Vector3Proto targetPos = 3;
+	int32 targetGuid = 4;
+}
+
+message scUseSkill
+{
+	int32 err = 1;
+}
+
+
 ////////////////////////////-----玩家操作 end
 
 ////////////////////////////-----服务端发来的关键战斗事件 start
 
-message BattleEntityProto
-{
-	int32 guid = 1;
-	int32 configId = 2;
-	Vector3Proto position = 3;
-}
 
-//创建多个单位实体
+//服务端通知 创建多个单位实体
 message scNotifyCreateEntities
 {
 	repeated BattleEntityProto battleEntities = 1;
 }
 
+//服务端通知 有单位实体开始移动
 message scNotifyEntityMove
 {
 	int32 guid = 1;
 	Vector3Proto startPos = 2;
 	Vector3Proto endPos = 3;
+	int32 moveSpeed = 4;//* 1000
+}
+
+//服务端通知 有单位实体停止移动
+message scNotifyEntityStopMove
+{
+	int32 guid = 1;
+	Vector3Proto endPos = 2;
+}
+
+//服务端通知 有单位使用技能
+message scNotifyEntityUseSkill
+{
+	int32 guid = 1;
+	int32 resId = 2;
 	
+}
+
+//服务端通知 有技能效果创建
+message scNotifyCreateSkillEffect
+{
+	int32 guid = 1;
+	int32 resId = 2;
+	Vector3Proto position = 3;
+}
+
+//服务端通知 有技能效果开始移动
+message scNotifySkillEffectStartMove
+{
+	int32 effectGuid = 1;
+	Vector3Proto startPos = 2;//创建的时候已经赋值了 所以这个没有用 先预留
+	Vector3Proto targetPos = 3;
+	int32 targetGuid = 4;
+	bool isFollow = 5;//实际上 如果 targetGuid 不为 0 那么一定跟随 这个应该就是 true 所以 这个目前貌似没有用 待定
+	int32 moveSpeed = 6;
+}
+
+message scNotifySkillEffectDestroy
+{
+	int32 effectGuid = 1;
 }
 
 ////////////////////////////-----服务端发来的关键战斗事件 end

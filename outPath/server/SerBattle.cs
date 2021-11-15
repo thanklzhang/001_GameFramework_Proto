@@ -26,28 +26,29 @@ namespace NetProto {
             "DEJhdHRsZS5wcm90byJRChBQbGF5ZXJCYXR0bGVBdHRyEhIKCmFkZGVkTWF4",
             "SHAYBCABKAUSEwoLYWRkZWRBdHRhY2sYBSABKAUSFAoMYWRkZWREZWZlbmNl",
             "GAYgASgFIjAKDVNraWxsSW5pdEluZm8SEAoIY29uZmlnSWQYASABKAUSDQoF",
-            "bGV2ZWwYAiABKAUinAEKDkVudGl0eUluaXRJbmZvEhAKCGNvbmZpZ0lkGAEg",
+            "bGV2ZWwYAiABKAUisAEKDkVudGl0eUluaXRJbmZvEhAKCGNvbmZpZ0lkGAEg",
             "ASgFEigKBGF0dHIYAiABKAsyGi5OZXRQcm90by5QbGF5ZXJCYXR0bGVBdHRy",
             "Eg0KBWxldmVsGAMgASgFEhMKC3BsYXllckluZGV4GAQgASgFEioKCXNraWxs",
-            "TGlzdBgFIAMoCzIXLk5ldFByb3RvLlNraWxsSW5pdEluZm8igQEKDlBsYXll",
-            "ckluaXRJbmZvEgsKA3VpZBgBIAEoBRITCgtwbGF5ZXJJbmRleBgCIAEoBRIM",
-            "CgR0ZWFtGAMgASgFEjAKDmVudGl0eUluaXRJbmZvGAQgASgLMhguTmV0UHJv",
-            "dG8uRW50aXR5SW5pdEluZm8SDQoFbGV2ZWwYBSABKAUiggEKFWNzQXBwbHlD",
-            "cmVhdGVCYXR0bGUyUxIUCgxiYXR0bGVSb29tSWQYASABKAUSEgoKYmF0dGxl",
-            "VHlwZRgCIAEoBRIwCg5wbGF5ZXJJbmZvTGlzdBgDIAMoCzIYLk5ldFByb3Rv",
-            "LlBsYXllckluaXRJbmZvEg0KBW1hcElkGAQgASgFIlQKFXNjQXBwbHlDcmVh",
-            "dGVCYXR0bGUyUxILCgNlcnIYASABKAUSLgoNYmF0dGxlSW5pdEFyZxgCIAEo",
-            "CzIXLk5ldFByb3RvLkJhdHRsZUluaXRBcmciMQoUY3NUcmFuc2l0aW9uQmF0",
-            "dGxlMlMSCwoDY21kGAEgASgFEgwKBGRhdGEYAiABKAwiIwoUc2NUcmFuc2l0",
-            "aW9uQmF0dGxlMlMSCwoDZXJyGAEgASgFIh0KG2NzVHJhbnNpdGlvbkJhdHRs",
-            "ZTJQbGF5ZXIyUyI4ChtzY1RyYW5zaXRpb25CYXR0bGUyUGxheWVyMlMSCwoD",
-            "Y21kGAEgASgFEgwKBGRhdGEYAiABKAxiBnByb3RvMw=="));
+            "TGlzdBgFIAMoCzIXLk5ldFByb3RvLlNraWxsSW5pdEluZm8SEgoKaXNIZXJv",
+            "Q3RybBgGIAEoCCKBAQoOUGxheWVySW5pdEluZm8SCwoDdWlkGAEgASgFEhMK",
+            "C3BsYXllckluZGV4GAIgASgFEgwKBHRlYW0YAyABKAUSMAoOZW50aXR5SW5p",
+            "dEluZm8YBCABKAsyGC5OZXRQcm90by5FbnRpdHlJbml0SW5mbxINCgVsZXZl",
+            "bBgFIAEoBSKCAQoVY3NBcHBseUNyZWF0ZUJhdHRsZTJTEhQKDGJhdHRsZVJv",
+            "b21JZBgBIAEoBRISCgpiYXR0bGVUeXBlGAIgASgFEjAKDnBsYXllckluZm9M",
+            "aXN0GAMgAygLMhguTmV0UHJvdG8uUGxheWVySW5pdEluZm8SDQoFbWFwSWQY",
+            "BCABKAUiVAoVc2NBcHBseUNyZWF0ZUJhdHRsZTJTEgsKA2VychgBIAEoBRIu",
+            "Cg1iYXR0bGVJbml0QXJnGAIgASgLMhcuTmV0UHJvdG8uQmF0dGxlSW5pdEFy",
+            "ZyIxChRjc1RyYW5zaXRpb25CYXR0bGUyUxILCgNjbWQYASABKAUSDAoEZGF0",
+            "YRgCIAEoDCIjChRzY1RyYW5zaXRpb25CYXR0bGUyUxILCgNlcnIYASABKAUi",
+            "HQobY3NUcmFuc2l0aW9uQmF0dGxlMlBsYXllcjJTIjgKG3NjVHJhbnNpdGlv",
+            "bkJhdHRsZTJQbGF5ZXIyUxILCgNjbWQYASABKAUSDAoEZGF0YRgCIAEoDGIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::NetProto.SerCommonReflection.Descriptor, global::NetProto.BattleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.PlayerBattleAttr), global::NetProto.PlayerBattleAttr.Parser, new[]{ "AddedMaxHp", "AddedAttack", "AddedDefence" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.SkillInitInfo), global::NetProto.SkillInitInfo.Parser, new[]{ "ConfigId", "Level" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.EntityInitInfo), global::NetProto.EntityInitInfo.Parser, new[]{ "ConfigId", "Attr", "Level", "PlayerIndex", "SkillList" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.EntityInitInfo), global::NetProto.EntityInitInfo.Parser, new[]{ "ConfigId", "Attr", "Level", "PlayerIndex", "SkillList", "IsHeroCtrl" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.PlayerInitInfo), global::NetProto.PlayerInitInfo.Parser, new[]{ "Uid", "PlayerIndex", "Team", "EntityInitInfo", "Level" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.csApplyCreateBattle2S), global::NetProto.csApplyCreateBattle2S.Parser, new[]{ "BattleRoomId", "BattleType", "PlayerInfoList", "MapId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.scApplyCreateBattle2S), global::NetProto.scApplyCreateBattle2S.Parser, new[]{ "Err", "BattleInitArg" }, null, null, null),
@@ -408,6 +409,7 @@ namespace NetProto {
       level_ = other.level_;
       playerIndex_ = other.playerIndex_;
       skillList_ = other.skillList_.Clone();
+      isHeroCtrl_ = other.isHeroCtrl_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -472,6 +474,20 @@ namespace NetProto {
       get { return skillList_; }
     }
 
+    /// <summary>Field number for the "isHeroCtrl" field.</summary>
+    public const int IsHeroCtrlFieldNumber = 6;
+    private bool isHeroCtrl_;
+    /// <summary>
+    /// 是否是该玩家控制的英雄
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsHeroCtrl {
+      get { return isHeroCtrl_; }
+      set {
+        isHeroCtrl_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EntityInitInfo);
@@ -490,6 +506,7 @@ namespace NetProto {
       if (Level != other.Level) return false;
       if (PlayerIndex != other.PlayerIndex) return false;
       if(!skillList_.Equals(other.skillList_)) return false;
+      if (IsHeroCtrl != other.IsHeroCtrl) return false;
       return true;
     }
 
@@ -501,6 +518,7 @@ namespace NetProto {
       if (Level != 0) hash ^= Level.GetHashCode();
       if (PlayerIndex != 0) hash ^= PlayerIndex.GetHashCode();
       hash ^= skillList_.GetHashCode();
+      if (IsHeroCtrl != false) hash ^= IsHeroCtrl.GetHashCode();
       return hash;
     }
 
@@ -528,6 +546,10 @@ namespace NetProto {
         output.WriteInt32(PlayerIndex);
       }
       skillList_.WriteTo(output, _repeated_skillList_codec);
+      if (IsHeroCtrl != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(IsHeroCtrl);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -546,6 +568,9 @@ namespace NetProto {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(PlayerIndex);
       }
       size += skillList_.CalculateSize(_repeated_skillList_codec);
+      if (IsHeroCtrl != false) {
+        size += 1 + 1;
+      }
       return size;
     }
 
@@ -570,6 +595,9 @@ namespace NetProto {
         PlayerIndex = other.PlayerIndex;
       }
       skillList_.Add(other.skillList_);
+      if (other.IsHeroCtrl != false) {
+        IsHeroCtrl = other.IsHeroCtrl;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -601,6 +629,10 @@ namespace NetProto {
           }
           case 42: {
             skillList_.AddEntriesFrom(input, _repeated_skillList_codec);
+            break;
+          }
+          case 48: {
+            IsHeroCtrl = input.ReadBool();
             break;
           }
         }

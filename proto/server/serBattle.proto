@@ -24,6 +24,7 @@ message EntityInitInfo
 	int32 level = 3;
 	int32 playerIndex = 4;//玩家索引 0 开始
 	repeated SkillInitInfo skillList = 5;
+	bool isHeroCtrl = 6;//是否是该玩家控制的英雄
 }
 
 message PlayerInitInfo
