@@ -41,6 +41,8 @@ enum ProtoIDs
 	NotifyCreateSkillEffect = 3205;
 	NotifySkillEffectStartMove = 3206;
 	NotifySkillEffectDestroy = 3207;
+	NotifySyncEntityAttr = 3208;
+	NotifySyncEntityValue = 3209;
 	
 	//转发战斗
 	TransitionBattle = 3301;

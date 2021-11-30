@@ -212,6 +212,34 @@ message scNotifySkillEffectDestroy
 	int32 effectGuid = 1;
 }
 
+message BattleEntityValueProto
+{
+	// 1 当前生命值, 2 当前法力值
+	int32 type = 1;
+	int32 value = 2;
+}
+
+//同步实体数据值
+message scNotifySyncEntityValue
+{
+	int32 entityGuid = 1;
+	repeated BattleEntityValueProto values = 2;
+	
+}
+
+message BattleEntityAttrProto
+{
+	int32 type = 1;
+	int32 value = 2;
+}
+//同步实体属性
+message scNotifySyncEntityAttr
+{
+	int32 entityGuid = 1;
+	repeated BattleEntityAttrProto attrs = 2;
+	
+}
+
 ////////////////////////////-----服务端发来的关键战斗事件 end
 
 
