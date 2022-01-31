@@ -13,13 +13,25 @@ message scCheckLogin
 	string ip = 2;
 	int32 port = 3;
 	int32 uid = 4;
-	int32 token = 5;
+	string token = 5;
+}
+
+message csRegistAccount
+{
+	string account = 1;
+	string password = 2;
+}
+
+message scRegistAccount
+{
+	int32 err = 1;
+	string account = 2;
 }
 
 message csEnterGame
 {
 	int32 uid = 1;//待检测
-	int32 token = 2;
+	string token = 2;
 }
 
 message scEnterGame

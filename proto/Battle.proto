@@ -194,6 +194,8 @@ message scNotifyCreateSkillEffect
 	int32 guid = 1;
 	int32 resId = 2;
 	Vector3Proto position = 3;
+	//跟随的实体 id 一般 buff 都会一直跟随
+	int32 followEntityGuid = 4;
 }
 
 //服务端通知 有技能效果开始移动
@@ -207,6 +209,7 @@ message scNotifySkillEffectStartMove
 	int32 moveSpeed = 6;
 }
 
+//服务端通知 有技能效果销毁
 message scNotifySkillEffectDestroy
 {
 	int32 effectGuid = 1;
