@@ -1,0 +1,57 @@
+syntax="proto3";
+package NetProto;
+
+message MainTaskChapter
+{
+	int32 id = 1;
+	int32 state = 2;//0 未完成 , 1 已完成但未领取 , 2 已领取
+	repeated MainTaskStage stages = 3;
+}
+
+message MainTaskStage
+{
+	int32 id = 1;
+	int32 state = 2;//0 未完成 , 1 已完成但未领取 , 2 已领取
+}
+
+message csSyncMainTask
+{
+	
+}
+
+message scSyncMainTask
+{
+	repeated MainTaskChapter chapters = 1;
+	
+}
+
+message csFinishMainTaskStage
+{
+	//主线是单机 所以只需要完成的时候客户端发送完成即可
+	int32 chapterId = 1;//其实不用 这里当作校验
+	int32 stageId = 2;
+}
+
+message scFinishMainTaskStage
+{
+	int32 err = 1;
+	int32 chapterId = 2;
+	int32 stageId = 3;
+}
+
+message csReceiveMainTaskRward
+{
+	int32 type = 1;//0 stage ， 1 chapter
+	int32 chapterId = 2;//其实不用 这里当作校验
+	int32 stageId = 3;
+}
+
+message scReceiveMainTaskRward
+{
+	int32 err = 1;
+	int32 type = 2;//0 stage ， 1 chapter
+	int32 chapterId = 3;
+	int32 stageId = 4;
+}
+
+

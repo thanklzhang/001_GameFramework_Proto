@@ -5,7 +5,7 @@ enum ProtoIDs
 {
 	First = 0;
 	
-	//1 -- 2000 服务端-----
+	//1 -- 2000 服务端----------------------------------------------
 	CheckLogin2S = 101;
 	EnterGame2S = 102;
 	RegistAccount2S = 103;
@@ -14,12 +14,18 @@ enum ProtoIDs
 	TransitionBattle2S = 301;
 	TransitionBattle2Player2S = 302;
 	
-	//2000+ 客户端-----
+	//2000+ 客户端--------------------------------------------------
 	CheckLogin = 2001;
 	EnterGame = 2002;
 	RegistAccount = 2003;
 	
-	//战斗入口
+	//主线任务
+	SyncMainTask = 2010;
+	FinishMainTaskStage = 2011;
+	ReceiveMainTaskRward = 2012;
+	
+	
+	//英雄试炼战斗入口
 	ApplyHeroExamBattle = 2100;
 	
 	//战斗 3000+
