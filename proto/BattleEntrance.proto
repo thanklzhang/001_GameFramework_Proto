@@ -15,3 +15,16 @@ message scApplyHeroExamBattle
 	int32 err = 1;
 }
 
+//申请进入主线战斗
+message csApplyMainTaskBattle
+{
+	int32 chapterId = 1;
+	int32 stageId = 2;
+}
+
+message scApplyMainTaskBattle
+{
+	int32 err = 1;
+	int32 chapterId = 2;
+	int32 stageId = 3;
+}

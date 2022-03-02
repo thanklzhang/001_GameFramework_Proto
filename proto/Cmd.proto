@@ -13,6 +13,7 @@ enum ProtoIDs
 	ApplyCreateBattle2S = 201;
 	TransitionBattle2S = 301;
 	TransitionBattle2Player2S = 302;
+	NotifyBattleEnd2S = 303;
 	
 	//2000+ 客户端--------------------------------------------------
 	CheckLogin = 2001;
@@ -25,8 +26,10 @@ enum ProtoIDs
 	ReceiveMainTaskRward = 2012;
 	
 	
-	//英雄试炼战斗入口
-	ApplyHeroExamBattle = 2100;
+	
+	//战斗入口
+	ApplyHeroExamBattle = 2100;	//英雄试炼
+	ApplyMainTaskBattle = 2101;	//主线
 	
 	//战斗 3000+
 	
@@ -51,6 +54,8 @@ enum ProtoIDs
 	NotifySkillEffectDestroy = 3207;
 	NotifySyncEntityAttr = 3208;
 	NotifySyncEntityValue = 3209;
+	NotifyEntityDead = 3210;
+	NotifyBattleEnd = 3211;
 	
 	//转发战斗
 	TransitionBattle = 3301;

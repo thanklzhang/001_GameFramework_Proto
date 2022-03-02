@@ -243,6 +243,18 @@ message scNotifySyncEntityAttr
 	
 }
 
+//有实体死亡
+message scNotifyEntityDead
+{
+	int32 entityGuid = 1;
+}
+
+//通知战斗结束
+message scNotifyBattleEnd
+{
+	int32 isWin = 1;
+}
+
 ////////////////////////////-----服务端发来的关键战斗事件 end
 
 

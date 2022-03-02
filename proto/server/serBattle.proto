@@ -40,10 +40,10 @@ message PlayerInitInfo
 //申请从战斗服务器创建一场战斗
 message csApplyCreateBattle2S
 {
-	int32 battleRoomId = 1;
-	int32 battleType = 2;//1 英雄试炼 (这里可能会走 activityId 和 活动 挂钩)
+	int32 battleRoomId = 1;		//运行时战斗房间的 guid
+	int32 battleConfigId = 2;	//表格中的战斗配置 id
 	repeated PlayerInitInfo playerInfoList = 3;
-	int32 mapId = 4;
+	int32 stageId = 4;	//当前业务层关卡 id ，通用 不够再扩展
 }
 
 message scApplyCreateBattle2S
@@ -73,3 +73,22 @@ message scTransitionBattle2Player2S
 	int32 cmd = 1;
 	bytes data = 2;
 }
+
+message PlayerBattleEndInfo
+{
+	int32 uid = 1;
+	int32 isWin = 2;
+	
+}
+
+message scNotifyBattleEnd2S
+{
+	int32 roomId = 1;
+	int32 battleConfigId = 2;
+	int32 stageId = 3;
+	repeated PlayerBattleEndInfo playerEndInfoList = 4;
+	
+}
+
+
+
