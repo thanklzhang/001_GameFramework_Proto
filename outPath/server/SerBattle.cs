@@ -33,20 +33,20 @@ namespace NetProto {
             "Q3RybBgGIAEoCCKBAQoOUGxheWVySW5pdEluZm8SCwoDdWlkGAEgASgFEhMK",
             "C3BsYXllckluZGV4GAIgASgFEgwKBHRlYW0YAyABKAUSMAoOZW50aXR5SW5p",
             "dEluZm8YBCABKAsyGC5OZXRQcm90by5FbnRpdHlJbml0SW5mbxINCgVsZXZl",
-            "bBgFIAEoBSKIAQoVY3NBcHBseUNyZWF0ZUJhdHRsZTJTEhQKDGJhdHRsZVJv",
-            "b21JZBgBIAEoBRIWCg5iYXR0bGVDb25maWdJZBgCIAEoBRIwCg5wbGF5ZXJJ",
-            "bmZvTGlzdBgDIAMoCzIYLk5ldFByb3RvLlBsYXllckluaXRJbmZvEg8KB3N0",
-            "YWdlSWQYBCABKAUiVAoVc2NBcHBseUNyZWF0ZUJhdHRsZTJTEgsKA2VychgB",
-            "IAEoBRIuCg1iYXR0bGVJbml0QXJnGAIgASgLMhcuTmV0UHJvdG8uQmF0dGxl",
-            "SW5pdEFyZyIxChRjc1RyYW5zaXRpb25CYXR0bGUyUxILCgNjbWQYASABKAUS",
-            "DAoEZGF0YRgCIAEoDCIjChRzY1RyYW5zaXRpb25CYXR0bGUyUxILCgNlcnIY",
-            "ASABKAUiHQobY3NUcmFuc2l0aW9uQmF0dGxlMlBsYXllcjJTIjgKG3NjVHJh",
-            "bnNpdGlvbkJhdHRsZTJQbGF5ZXIyUxILCgNjbWQYASABKAUSDAoEZGF0YRgC",
-            "IAEoDCIxChNQbGF5ZXJCYXR0bGVFbmRJbmZvEgsKA3VpZBgBIAEoBRINCgVp",
-            "c1dpbhgCIAEoBSKIAQoTc2NOb3RpZnlCYXR0bGVFbmQyUxIOCgZyb29tSWQY",
-            "ASABKAUSFgoOYmF0dGxlQ29uZmlnSWQYAiABKAUSDwoHc3RhZ2VJZBgDIAEo",
-            "BRI4ChFwbGF5ZXJFbmRJbmZvTGlzdBgEIAMoCzIdLk5ldFByb3RvLlBsYXll",
-            "ckJhdHRsZUVuZEluZm9iBnByb3RvMw=="));
+            "bBgFIAEoBSKHAQoVY3NBcHBseUNyZWF0ZUJhdHRsZTJTEhQKDGJhdHRsZVJv",
+            "b21JZBgBIAEoBRIVCg1iYXR0bGVUYWJsZUlkGAIgASgFEjAKDnBsYXllcklu",
+            "Zm9MaXN0GAMgAygLMhguTmV0UHJvdG8uUGxheWVySW5pdEluZm8SDwoHc3Rh",
+            "Z2VJZBgEIAEoBSJUChVzY0FwcGx5Q3JlYXRlQmF0dGxlMlMSCwoDZXJyGAEg",
+            "ASgFEi4KDWJhdHRsZUluaXRBcmcYAiABKAsyFy5OZXRQcm90by5CYXR0bGVJ",
+            "bml0QXJnIjEKFGNzVHJhbnNpdGlvbkJhdHRsZTJTEgsKA2NtZBgBIAEoBRIM",
+            "CgRkYXRhGAIgASgMIiMKFHNjVHJhbnNpdGlvbkJhdHRsZTJTEgsKA2VychgB",
+            "IAEoBSIdChtjc1RyYW5zaXRpb25CYXR0bGUyUGxheWVyMlMiOAobc2NUcmFu",
+            "c2l0aW9uQmF0dGxlMlBsYXllcjJTEgsKA2NtZBgBIAEoBRIMCgRkYXRhGAIg",
+            "ASgMIjEKE1BsYXllckJhdHRsZUVuZEluZm8SCwoDdWlkGAEgASgFEg0KBWlz",
+            "V2luGAIgASgFIocBChNzY05vdGlmeUJhdHRsZUVuZDJTEg4KBnJvb21JZBgB",
+            "IAEoBRIVCg1iYXR0bGVUYWJsZUlkGAIgASgFEg8KB3N0YWdlSWQYAyABKAUS",
+            "OAoRcGxheWVyRW5kSW5mb0xpc3QYBCADKAsyHS5OZXRQcm90by5QbGF5ZXJC",
+            "YXR0bGVFbmRJbmZvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::NetProto.SerCommonReflection.Descriptor, global::NetProto.BattleReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -54,14 +54,14 @@ namespace NetProto {
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.SkillInitInfo), global::NetProto.SkillInitInfo.Parser, new[]{ "ConfigId", "Level" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.EntityInitInfo), global::NetProto.EntityInitInfo.Parser, new[]{ "ConfigId", "Attr", "Level", "PlayerIndex", "SkillList", "IsHeroCtrl" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.PlayerInitInfo), global::NetProto.PlayerInitInfo.Parser, new[]{ "Uid", "PlayerIndex", "Team", "EntityInitInfo", "Level" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.csApplyCreateBattle2S), global::NetProto.csApplyCreateBattle2S.Parser, new[]{ "BattleRoomId", "BattleConfigId", "PlayerInfoList", "StageId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.csApplyCreateBattle2S), global::NetProto.csApplyCreateBattle2S.Parser, new[]{ "BattleRoomId", "BattleTableId", "PlayerInfoList", "StageId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.scApplyCreateBattle2S), global::NetProto.scApplyCreateBattle2S.Parser, new[]{ "Err", "BattleInitArg" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.csTransitionBattle2S), global::NetProto.csTransitionBattle2S.Parser, new[]{ "Cmd", "Data" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.scTransitionBattle2S), global::NetProto.scTransitionBattle2S.Parser, new[]{ "Err" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.csTransitionBattle2Player2S), global::NetProto.csTransitionBattle2Player2S.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.scTransitionBattle2Player2S), global::NetProto.scTransitionBattle2Player2S.Parser, new[]{ "Cmd", "Data" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.PlayerBattleEndInfo), global::NetProto.PlayerBattleEndInfo.Parser, new[]{ "Uid", "IsWin" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.scNotifyBattleEnd2S), global::NetProto.scNotifyBattleEnd2S.Parser, new[]{ "RoomId", "BattleConfigId", "StageId", "PlayerEndInfoList" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.scNotifyBattleEnd2S), global::NetProto.scNotifyBattleEnd2S.Parser, new[]{ "RoomId", "BattleTableId", "StageId", "PlayerEndInfoList" }, null, null, null)
           }));
     }
     #endregion
@@ -910,7 +910,7 @@ namespace NetProto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public csApplyCreateBattle2S(csApplyCreateBattle2S other) : this() {
       battleRoomId_ = other.battleRoomId_;
-      battleConfigId_ = other.battleConfigId_;
+      battleTableId_ = other.battleTableId_;
       playerInfoList_ = other.playerInfoList_.Clone();
       stageId_ = other.stageId_;
     }
@@ -934,17 +934,17 @@ namespace NetProto {
       }
     }
 
-    /// <summary>Field number for the "battleConfigId" field.</summary>
-    public const int BattleConfigIdFieldNumber = 2;
-    private int battleConfigId_;
+    /// <summary>Field number for the "battleTableId" field.</summary>
+    public const int BattleTableIdFieldNumber = 2;
+    private int battleTableId_;
     /// <summary>
     /// 表格中的战斗配置 id
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int BattleConfigId {
-      get { return battleConfigId_; }
+    public int BattleTableId {
+      get { return battleTableId_; }
       set {
-        battleConfigId_ = value;
+        battleTableId_ = value;
       }
     }
 
@@ -986,7 +986,7 @@ namespace NetProto {
         return true;
       }
       if (BattleRoomId != other.BattleRoomId) return false;
-      if (BattleConfigId != other.BattleConfigId) return false;
+      if (BattleTableId != other.BattleTableId) return false;
       if(!playerInfoList_.Equals(other.playerInfoList_)) return false;
       if (StageId != other.StageId) return false;
       return true;
@@ -996,7 +996,7 @@ namespace NetProto {
     public override int GetHashCode() {
       int hash = 1;
       if (BattleRoomId != 0) hash ^= BattleRoomId.GetHashCode();
-      if (BattleConfigId != 0) hash ^= BattleConfigId.GetHashCode();
+      if (BattleTableId != 0) hash ^= BattleTableId.GetHashCode();
       hash ^= playerInfoList_.GetHashCode();
       if (StageId != 0) hash ^= StageId.GetHashCode();
       return hash;
@@ -1013,9 +1013,9 @@ namespace NetProto {
         output.WriteRawTag(8);
         output.WriteInt32(BattleRoomId);
       }
-      if (BattleConfigId != 0) {
+      if (BattleTableId != 0) {
         output.WriteRawTag(16);
-        output.WriteInt32(BattleConfigId);
+        output.WriteInt32(BattleTableId);
       }
       playerInfoList_.WriteTo(output, _repeated_playerInfoList_codec);
       if (StageId != 0) {
@@ -1030,8 +1030,8 @@ namespace NetProto {
       if (BattleRoomId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(BattleRoomId);
       }
-      if (BattleConfigId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BattleConfigId);
+      if (BattleTableId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BattleTableId);
       }
       size += playerInfoList_.CalculateSize(_repeated_playerInfoList_codec);
       if (StageId != 0) {
@@ -1048,8 +1048,8 @@ namespace NetProto {
       if (other.BattleRoomId != 0) {
         BattleRoomId = other.BattleRoomId;
       }
-      if (other.BattleConfigId != 0) {
-        BattleConfigId = other.BattleConfigId;
+      if (other.BattleTableId != 0) {
+        BattleTableId = other.BattleTableId;
       }
       playerInfoList_.Add(other.playerInfoList_);
       if (other.StageId != 0) {
@@ -1070,7 +1070,7 @@ namespace NetProto {
             break;
           }
           case 16: {
-            BattleConfigId = input.ReadInt32();
+            BattleTableId = input.ReadInt32();
             break;
           }
           case 26: {
@@ -1910,7 +1910,7 @@ namespace NetProto {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public scNotifyBattleEnd2S(scNotifyBattleEnd2S other) : this() {
       roomId_ = other.roomId_;
-      battleConfigId_ = other.battleConfigId_;
+      battleTableId_ = other.battleTableId_;
       stageId_ = other.stageId_;
       playerEndInfoList_ = other.playerEndInfoList_.Clone();
     }
@@ -1931,14 +1931,14 @@ namespace NetProto {
       }
     }
 
-    /// <summary>Field number for the "battleConfigId" field.</summary>
-    public const int BattleConfigIdFieldNumber = 2;
-    private int battleConfigId_;
+    /// <summary>Field number for the "battleTableId" field.</summary>
+    public const int BattleTableIdFieldNumber = 2;
+    private int battleTableId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int BattleConfigId {
-      get { return battleConfigId_; }
+    public int BattleTableId {
+      get { return battleTableId_; }
       set {
-        battleConfigId_ = value;
+        battleTableId_ = value;
       }
     }
 
@@ -1977,7 +1977,7 @@ namespace NetProto {
         return true;
       }
       if (RoomId != other.RoomId) return false;
-      if (BattleConfigId != other.BattleConfigId) return false;
+      if (BattleTableId != other.BattleTableId) return false;
       if (StageId != other.StageId) return false;
       if(!playerEndInfoList_.Equals(other.playerEndInfoList_)) return false;
       return true;
@@ -1987,7 +1987,7 @@ namespace NetProto {
     public override int GetHashCode() {
       int hash = 1;
       if (RoomId != 0) hash ^= RoomId.GetHashCode();
-      if (BattleConfigId != 0) hash ^= BattleConfigId.GetHashCode();
+      if (BattleTableId != 0) hash ^= BattleTableId.GetHashCode();
       if (StageId != 0) hash ^= StageId.GetHashCode();
       hash ^= playerEndInfoList_.GetHashCode();
       return hash;
@@ -2004,9 +2004,9 @@ namespace NetProto {
         output.WriteRawTag(8);
         output.WriteInt32(RoomId);
       }
-      if (BattleConfigId != 0) {
+      if (BattleTableId != 0) {
         output.WriteRawTag(16);
-        output.WriteInt32(BattleConfigId);
+        output.WriteInt32(BattleTableId);
       }
       if (StageId != 0) {
         output.WriteRawTag(24);
@@ -2021,8 +2021,8 @@ namespace NetProto {
       if (RoomId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(RoomId);
       }
-      if (BattleConfigId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BattleConfigId);
+      if (BattleTableId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BattleTableId);
       }
       if (StageId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(StageId);
@@ -2039,8 +2039,8 @@ namespace NetProto {
       if (other.RoomId != 0) {
         RoomId = other.RoomId;
       }
-      if (other.BattleConfigId != 0) {
-        BattleConfigId = other.BattleConfigId;
+      if (other.BattleTableId != 0) {
+        BattleTableId = other.BattleTableId;
       }
       if (other.StageId != 0) {
         StageId = other.StageId;
@@ -2061,7 +2061,7 @@ namespace NetProto {
             break;
           }
           case 16: {
-            BattleConfigId = input.ReadInt32();
+            BattleTableId = input.ReadInt32();
             break;
           }
           case 24: {

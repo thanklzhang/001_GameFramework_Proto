@@ -56,6 +56,7 @@ enum ProtoIDs
 	NotifySyncEntityValue = 3209;
 	NotifyEntityDead = 3210;
 	NotifyBattleEnd = 3211;
+	NotifyPlayPlot = 3212;
 	
 	//转发战斗
 	TransitionBattle = 3301;

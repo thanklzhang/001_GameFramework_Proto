@@ -36,7 +36,7 @@ message BattleInitArg
 	//战斗 guid
 	int32 guid = 1;
 	//战斗 表配置 id
-	int32 configId = 2;
+	int32 tableId = 2;
 	//战斗所属 center server 中 room id
 	int32 roomId = 3;
 	//所有战斗玩家的初始信息
@@ -247,6 +247,12 @@ message scNotifySyncEntityAttr
 message scNotifyEntityDead
 {
 	int32 entityGuid = 1;
+}
+
+//服务器通知 播放剧情
+message scNotifyPlayPlot
+{
+	string plotName = 1;
 }
 
 //通知战斗结束

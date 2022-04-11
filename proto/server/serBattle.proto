@@ -41,7 +41,7 @@ message PlayerInitInfo
 message csApplyCreateBattle2S
 {
 	int32 battleRoomId = 1;		//运行时战斗房间的 guid
-	int32 battleConfigId = 2;	//表格中的战斗配置 id
+	int32 battleTableId = 2;	//表格中的战斗配置 id
 	repeated PlayerInitInfo playerInfoList = 3;
 	int32 stageId = 4;	//当前业务层关卡 id ，通用 不够再扩展
 }
@@ -84,7 +84,7 @@ message PlayerBattleEndInfo
 message scNotifyBattleEnd2S
 {
 	int32 roomId = 1;
-	int32 battleConfigId = 2;
+	int32 battleTableId = 2;
 	int32 stageId = 3;
 	repeated PlayerBattleEndInfo playerEndInfoList = 4;
 	
