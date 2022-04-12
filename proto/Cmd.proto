@@ -43,6 +43,7 @@ enum ProtoIDs
 	//玩家操作
 	MoveEntity = 3101;
 	UseSkill = 3102;
+	ClientPlotEnd = 3130;
 	
 	//服务端发来的关键战斗事件
 	NotifyCreateEntities = 3201;
@@ -57,6 +58,8 @@ enum ProtoIDs
 	NotifyEntityDead = 3210;
 	NotifyBattleEnd = 3211;
 	NotifyPlayPlot = 3212;
+	NotifyPlotEnd = 3213;
+	NotifySetEntityShowState = 3214;
 	
 	//转发战斗
 	TransitionBattle = 3301;

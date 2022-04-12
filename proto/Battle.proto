@@ -139,6 +139,7 @@ message scMoveEntity
 	int32 err = 1;
 }
 
+//使用技能
 message csUseSkill
 {
 	int32 guid = 1;
@@ -151,6 +152,18 @@ message scUseSkill
 {
 	int32 err = 1;
 }
+
+//发送剧情结束(由于剧情银每个玩家不一致 所以现在方案时强行等待所有玩家剧情结束)
+message csClientPlotEnd
+{
+	
+}
+
+message scClientPlotEnd
+{
+	int32 err = 1;
+}
+
 
 
 ////////////////////////////-----玩家操作 end
@@ -254,6 +267,20 @@ message scNotifyPlayPlot
 {
 	string plotName = 1;
 }
+
+//服务器通知 剧情结束(所有玩家)
+message scNotifyPlotEnd
+{
+	
+}
+
+//服务器通知 隐藏 entity 显示
+message scNotifySetEntityShowState
+{
+	repeated int32 guids = 1;
+	bool isShow = 2;
+}
+
 
 //通知战斗结束
 message scNotifyBattleEnd
