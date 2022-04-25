@@ -1,6 +1,21 @@
 syntax="proto3";
 package NetProto;
 
+message Item
+{
+	int32 configId = 1;
+	//-1 的时候代表删除物品
+	int32 count = 2;
+}
+
+message HeroProto
+{
+	int32 guid = 1;
+	//-1 表示删除英雄
+	int32 configId = 2;
+	int32 level = 3;
+}
+
 message Vector3Proto
 {
 	int32 x = 1;

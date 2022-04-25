@@ -1,0 +1,25 @@
+syntax="proto3";
+package NetProto;
+
+import "Common.proto";
+
+message csSyncBag
+{
+	
+}
+
+message scSyncBag
+{
+	repeated Item items = 1;
+}
+
+message csUpdateItem
+{
+	
+}
+
+message scUpdateItem
+{
+	Item item = 1;
+}
+

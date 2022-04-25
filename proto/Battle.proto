@@ -286,6 +286,7 @@ message scNotifySetEntityShowState
 message scNotifyBattleEnd
 {
 	int32 isWin = 1;
+	repeated Item rewards = 2;
 }
 
 ////////////////////////////-----服务端发来的关键战斗事件 end

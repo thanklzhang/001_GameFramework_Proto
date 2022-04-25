@@ -1,14 +1,34 @@
 syntax="proto3";
 package NetProto;
+import "Common.proto";
 
-message csUpdateHeroLevel
+//message HeroListProto
+//{
+//	repeated HeroProto heroList = 1;
+//}
+
+
+message csSyncHeroList
 {
-	int32 level = 1;
+	
 }
 
-message scUpdateHeroLevel
+message scSyncHeroList
 {
 	int32 err = 1;
+	repeated HeroProto heroList = 2;
+}
+
+message csUpgradeHeroLevel
+{
+	int32 guid = 1;
+	int32 level = 2;
+}
+
+message scUpgradeHeroLevel
+{
+	int32 err = 1;
+	//HeroProto hero = 2;
 }
 
 

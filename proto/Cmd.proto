@@ -25,6 +25,14 @@ enum ProtoIDs
 	FinishMainTaskStage = 2011;
 	ReceiveMainTaskRward = 2012;
 	
+	//背包
+	SyncBag = 2020;
+	UpdateItem = 2021;
+	
+	//英雄
+	SyncHeroList = 2030;
+	UpdateHeroList = 2031;
+	UpgradeHeroLevel = 2032;
 	
 	
 	//战斗入口
