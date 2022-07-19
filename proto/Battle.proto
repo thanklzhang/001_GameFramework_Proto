@@ -209,6 +209,7 @@ message scNotifyCreateSkillEffect
 	Vector3Proto position = 3;
 	//跟随的实体 id 一般 buff 都会一直跟随
 	int32 followEntityGuid = 4;
+	int32 lastTime = 5;
 }
 
 //服务端通知 有技能效果开始移动
@@ -220,6 +221,14 @@ message scNotifySkillEffectStartMove
 	int32 targetGuid = 4;
 	bool isFollow = 5;//实际上 如果 targetGuid 不为 0 那么一定跟随 这个应该就是 true 所以 这个目前貌似没有用 待定
 	int32 moveSpeed = 6;
+}
+
+//服务器通知 技能效果更新信息
+message scNotifyBuffUpdate
+{
+	int32 guid = 1;
+	int32 lastTime = 2;
+	int32 buffLayer = 3;
 }
 
 //服务端通知 有技能效果销毁
