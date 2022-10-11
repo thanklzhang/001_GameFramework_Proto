@@ -22,3 +22,57 @@ message Vector3Proto
 	int32 y = 2;
 	int32 z = 3;
 }
+
+message PlayerInfoProto
+{
+	int32 uid = 1;
+	string name = 2;
+	int32 level = 3;
+	string avatarURL = 4;
+}
+
+
+
+//--battle---------------------------------------
+message PlayerBattleAttr
+{
+	int32 addedMaxHp = 4;
+	int32 addedAttack = 5;
+	int32 addedDefence = 6;
+}
+
+message SkillInitInfo
+{
+	int32 configId = 1;
+	int32 level = 2;
+
+}
+message EntityInitInfo
+{
+	int32 configId = 1;
+	PlayerBattleAttr attr = 2;
+	int32 level = 3;
+	int32 playerIndex = 4;//玩家索引 0 开始
+	repeated SkillInitInfo skillList = 5;
+	bool isHeroCtrl = 6;//是否是该玩家控制的英雄
+}
+
+message PlayerInitInfo
+{
+	int32 uid = 1;
+	int32 playerIndex = 2;
+	int32 team = 3;
+	EntityInitInfo entityInitInfo = 4;
+	int32 level = 5;
+	Vector3Proto initPos = 6;//玩家控制单位初始坐标
+}
+
+message ApplyBattleArg
+{
+	int32 battleRoomId = 1;							//运行时战斗房间的 guid
+	int32 battleTableId = 2;						//表格中的战斗配置 id
+	repeated PlayerInitInfo playerInfoList = 3;		//玩家信息列表
+	int32 functionId = 4;							//所属功能 id
+}
+
+//--------------------------------------------------

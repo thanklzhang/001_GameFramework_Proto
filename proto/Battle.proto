@@ -28,6 +28,9 @@ message csNotifyCreateBattle
 message scNotifyCreateBattle
 {
 	BattleInitArg battleInitArg = 1;
+	
+	//本地战斗的话不为空 客户端将其解析成战斗初始化参数
+	ApplyBattleArg localApplyBattleArg = 3;
 }
 
 // 战斗初始化信息 ///////////////////////////////////////////////////
@@ -45,7 +48,8 @@ message BattleInitArg
 	BattleEntityInitArg entityInitArg = 5;
 	//地图信息(暂时不用)
 	//BattleMapInitArg mapInitArg = 6;
-	
+	//活动 id
+	int32 activityId = 7;
 	
 }
 
@@ -177,12 +181,22 @@ message scNotifyCreateEntities
 	repeated BattleEntityProto battleEntities = 1;
 }
 
-//服务端通知 有单位实体开始移动
-message scNotifyEntityMove
+////服务端通知 有单位实体开始移动
+//message scNotifyEntityMove
+//{
+//	int32 guid = 1;
+//	Vector3Proto startPos = 2;
+//	Vector3Proto endPos = 3;
+//	int32 moveSpeed = 4;//* 1000
+//	Vector3Proto dir = 5;
+//}
+
+//服务端通知 有单位实体开始按照路径移动
+message scNotifyEntityMoveByPath
 {
 	int32 guid = 1;
 	Vector3Proto startPos = 2;
-	Vector3Proto endPos = 3;
+	repeated Vector3Proto pathList = 3;
 	int32 moveSpeed = 4;//* 1000
 }
 
@@ -191,6 +205,13 @@ message scNotifyEntityStopMove
 {
 	int32 guid = 1;
 	Vector3Proto endPos = 2;
+}
+
+//服务端通知 有单位改变了朝向
+message scNotifyEntityDir
+{
+	int32 guid = 1;
+	Vector3Proto dir = 2;
 }
 
 //服务端通知 有单位使用技能
@@ -210,6 +231,7 @@ message scNotifyCreateSkillEffect
 	//跟随的实体 id 一般 buff 都会一直跟随
 	int32 followEntityGuid = 4;
 	int32 lastTime = 5;
+	bool isAutoDestroy = 6;
 }
 
 //服务端通知 有技能效果开始移动

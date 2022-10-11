@@ -34,10 +34,27 @@ enum ProtoIDs
 	UpdateHeroList = 2031;
 	UpgradeHeroLevel = 2032;
 	
+	//组队
+	GetTeamRoomList = 2070;
+	CreateTeamRoom = 2071;
+	LeaveTeamRoom = 2072;
+	EnterTeamRoom = 2073;
+	SelectTeamStageInTeamRoom = 2074;
+	SelectUseHeroInTeamRoom = 2075;
+	ChangeReadyStateInTeamRoom = 2076;
+	StartTeamBattle = 2077;
+	NotifyLeaveTeamRoom = 2085;
+	NotifyPlayerEnterTeamRoom = 2086;
+	NotifyChangeTeamRoomInfo = 2087;
+	NotifyChangePlayerInfoInTeamRoom = 2088;
 	
 	//战斗入口
-	ApplyHeroExamBattle = 2100;	//英雄试炼
-	ApplyMainTaskBattle = 2101;	//主线
+	ApplyEnterBattle = 2100;//通用入口
+	
+	//即将舍去
+	ApplyHeroExamBattle = 2101;	//英雄试炼
+	ApplyMainTaskBattle = 2102;	//主线
+	
 	
 	//战斗 3000+
 	
@@ -55,7 +72,7 @@ enum ProtoIDs
 	
 	//服务端发来的关键战斗事件
 	NotifyCreateEntities = 3201;
-	NotifyEntityMove = 3202;
+	//NotifyEntityMove = 3202; //废弃
 	NotifyEntityStopMove = 3203;
 	NotifyEntityReleaseSkill = 3204;
 	NotifyCreateSkillEffect = 3205;
@@ -68,6 +85,8 @@ enum ProtoIDs
 	NotifyPlayPlot = 3212;
 	NotifyPlotEnd = 3213;
 	NotifySetEntityShowState = 3214;
+	NotifyEntityDir = 3215;
+	NotifyEntityMoveByPath = 3216;
 	
 	//转发战斗
 	TransitionBattle = 3301;

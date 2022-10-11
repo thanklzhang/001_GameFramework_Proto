@@ -1,0 +1,153 @@
+syntax="proto3";
+package NetProto;
+
+import "Common.proto";
+
+message TeamRoom
+{
+	int32 roomId = 1;
+	int32 teamStageId = 2;
+	string roomName = 3;
+	int32 state = 4;//0 准备中 , 1 战斗中
+	repeated TeamRoomPlayer playerList = 5;
+}
+
+message TeamRoomPlayer
+{
+	PlayerInfoProto playerInfo = 1;
+	bool isRoomMaster = 2;
+	bool isHasReady = 3;
+	int32 selectHeroGuid = 4;
+	int32 seat = 5;
+	
+}
+
+//获取组队房间列表
+message csGetTeamRoomList
+{
+	
+}
+
+message scGetTeamRoomList
+{
+	int32 err = 1;
+	repeated TeamRoom teamRoomList = 2;
+}
+
+//创建组队房间
+message csCreateTeamRoom
+{
+	int32 teamStageId = 1;
+}
+
+message scCreateTeamRoom
+{
+	int32 err = 1;
+	TeamRoom teamRoom = 2;
+}
+
+//离开组队房间
+message csLeaveTeamRoom
+{
+	int32 teamRoomId = 1;
+}
+
+message scLeaveTeamRoom
+{
+	int32 err = 1;
+}
+
+//通知房间内所有人 有人离开组队房间(如果是自己的话 , 可能是自己退出 , 也可能是被 t , 也有可能是房间关闭)
+message scNotifyLeaveTeamRoom
+{
+	int32 playerUid = 1;
+}
+
+//进入一个组队房间
+message csEnterTeamRoom
+{
+	int32 teamRoomId = 1;
+	
+}
+
+message scEnterTeamRoom
+{
+	int32 err = 1;
+	TeamRoom teamRoom = 2;
+}
+
+//通知房间内所有人 有人加入组队房间
+message scNotifyPlayerEnterTeamRoom
+{
+	TeamRoomPlayer player = 1;
+}
+
+//在组队房间中玩家(房主)选择战斗关卡
+message csSelectTeamStageInTeamRoom
+{
+	int32 teamStageId = 1;
+}
+
+message scSelectTeamStageInTeamRoom
+{
+	int32 err = 1;
+	int32 teamStageId = 2;
+}
+
+//通知房间内所有人 更改房间信息
+message scNotifyChangeTeamRoomInfo
+{
+	int32 teamStageId = 1;
+}
+
+//在组队房间中玩家选择使用英雄
+message csSelectUseHeroInTeamRoom
+{
+	int32 heroGuid = 1;
+}
+
+message scSelectUseHeroInTeamRoom
+{
+	int32 err = 1;
+	int32 heroGuid = 2;
+}
+
+//玩家更改准备状态
+message csChangeReadyStateInTeamRoom
+{
+	int32 teamRoomId = 1;
+	bool isReady = 2;
+}
+
+message scChangeReadyStateInTeamRoom
+{
+	int32 err = 1;
+}
+
+//通知房间内所有人 有玩家更改了自己的组队状态信息
+message scNotifyChangePlayerInfoInTeamRoom
+{
+	TeamRoomPlayer player = 1;
+}
+
+//开始组队战斗(房主)
+message csStartTeamBattle
+{
+	
+}
+
+message scStartTeamBattle
+{
+	int32 err = 1;
+}
+
+
+
+
+
+
+
+
+
+
+

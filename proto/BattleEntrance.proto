@@ -4,7 +4,43 @@ package NetProto;
 import "Common.proto";
 import "Battle.proto";
 
-//申请进入英雄试炼战斗
+message csApplyEnterBattle
+{
+	//战斗所属功能id
+	int32 funcId = 1;
+	
+	//主线
+	MainTaskEnterBattleArgs mainTaskArgs = 2;
+	//组队
+	TeamEnterBattleArgs teamArgs = 3;
+	
+}
+
+message scApplyEnterBattle
+{
+	int32 err = 1;
+	
+	int32 funcId = 2;
+	
+	//本地战斗的话不为空 客户端将其解析成战斗初始化参数
+	//ApplyBattleArg localApplyBattleArg = 3;
+}
+
+
+message TeamEnterBattleArgs
+{
+	int32 teamRoomId = 1;
+}
+
+message MainTaskEnterBattleArgs
+{
+	int32 chapterId = 1;
+	int32 stageId = 2;
+}
+
+
+
+//申请进入英雄试炼战斗（将要舍去）
 message csApplyHeroExamBattle
 {
 	
@@ -15,7 +51,7 @@ message scApplyHeroExamBattle
 	int32 err = 1;
 }
 
-//申请进入主线战斗
+//申请进入主线战斗（将要舍去）
 message csApplyMainTaskBattle
 {
 	int32 chapterId = 1;
