@@ -312,6 +312,16 @@ message scNotifySetEntityShowState
 	bool isShow = 2;
 }
 
+//主动发起计算 一般是本地战斗的结算
+message csApplyBattleEnd
+{
+	ApplyBattleEndArg applyBattleEndArg = 1;
+}
+
+message scApplyBattleEnd
+{
+	int32 err = 1;
+}
 
 //通知战斗结束
 message scNotifyBattleEnd

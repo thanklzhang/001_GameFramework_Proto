@@ -85,19 +85,14 @@ message scTransitionBattle2Player2S
 	bytes data = 2;
 }
 
-message PlayerBattleEndInfo
-{
-	int32 uid = 1;
-	int32 isWin = 2;
-	
-}
 
 message scNotifyBattleEnd2S
 {
-	int32 roomId = 1;
-	int32 battleTableId = 2;
-	int32 stageId = 3;
-	repeated PlayerBattleEndInfo playerEndInfoList = 4;
+	ApplyBattleEndArg applyBattleEndArg = 1;
+	//int32 roomId = 1;
+	//int32 battleTableId = 2;
+	//int32 stageId = 3;
+	//repeated PlayerBattleEndInfo playerEndInfoList = 4;
 	
 }
 

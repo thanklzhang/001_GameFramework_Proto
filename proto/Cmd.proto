@@ -70,7 +70,7 @@ enum ProtoIDs
 	UseSkill = 3102;
 	ClientPlotEnd = 3130;
 	
-	//服务端发来的关键战斗事件
+	//服务端发来的关键战斗事件(转发)
 	NotifyCreateEntities = 3201;
 	//NotifyEntityMove = 3202; //废弃
 	NotifyEntityStopMove = 3203;
@@ -81,16 +81,21 @@ enum ProtoIDs
 	NotifySyncEntityAttr = 3208;
 	NotifySyncEntityValue = 3209;
 	NotifyEntityDead = 3210;
-	NotifyBattleEnd = 3211;
 	NotifyPlayPlot = 3212;
 	NotifyPlotEnd = 3213;
 	NotifySetEntityShowState = 3214;
 	NotifyEntityDir = 3215;
 	NotifyEntityMoveByPath = 3216;
 	
+	
+	
 	//转发战斗
 	TransitionBattle = 3301;
 	TransitionBattle2Player = 3302;
+	
+	//主动申请战斗结束(一般是本地战斗)
+	ApplyBattleEnd = 3320;
+	NotifyBattleEnd = 3321;
 }
 
 

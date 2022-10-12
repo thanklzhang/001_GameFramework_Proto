@@ -75,4 +75,20 @@ message ApplyBattleArg
 	int32 functionId = 4;							//所属功能 id
 }
 
+message PlayerBattleEndInfo
+{
+	int32 uid = 1;
+	int32 isWin = 2;
+	
+}
+
+message ApplyBattleEndArg
+{
+	int32 roomId = 1;
+	int32 battleTableId = 2;
+	repeated PlayerBattleEndInfo playerEndInfoList = 3;
+}
+
+
+
 //--------------------------------------------------
