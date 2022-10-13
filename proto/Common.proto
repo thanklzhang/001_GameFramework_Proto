@@ -54,7 +54,8 @@ message EntityInitInfo
 	int32 level = 3;
 	int32 playerIndex = 4;//玩家索引 0 开始
 	repeated SkillInitInfo skillList = 5;
-	bool isHeroCtrl = 6;//是否是该玩家控制的英雄
+	bool isPlayerCtrl = 6;//是否是玩家控制的实体
+	bool isHeroUseConfig = 7;//如果是玩家控制的英雄 那么就代表是否使用配置中的数据而不是玩家拥有英雄的数据
 }
 
 message PlayerInitInfo
@@ -65,6 +66,7 @@ message PlayerInitInfo
 	EntityInitInfo entityInitInfo = 4;
 	int32 level = 5;
 	Vector3Proto initPos = 6;//玩家控制单位初始坐标
+	
 }
 
 message ApplyBattleArg
