@@ -22,26 +22,28 @@ namespace NetProto {
     static SerLoginReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg5zZXJMb2dpbi5wcm90bxIITmV0UHJvdG8aD3NlckNvbW1vbi5wcm90byJG",
-            "Cg5jc0NoZWNrTG9naW4yUxIRCgljb25uZWN0SWQYASABKAUSDwoHYWNjb3Vu",
-            "dBgCIAEoCRIQCghwYXNzd29yZBgDIAEoCSJmCg5zY0NoZWNrTG9naW4yUxIL",
-            "CgNlcnIYASABKAUSCgoCaXAYAiABKAkSDAoEcG9ydBgDIAEoBRIRCgljb25u",
-            "ZWN0SWQYBCABKAUSCwoDdWlkGAUgASgFEg0KBXRva2VuGAYgASgJIkkKEWNz",
-            "UmVnaXN0QWNjb3VudDJTEhEKCWNvbm5lY3RJZBgBIAEoBRIPCgdhY2NvdW50",
-            "GAIgASgJEhAKCHBhc3N3b3JkGAMgASgJIkQKEXNjUmVnaXN0QWNjb3VudDJT",
-            "EgsKA2VychgBIAEoBRIRCgljb25uZWN0SWQYAiABKAUSDwoHYWNjb3VudBgD",
-            "IAEoCSI4Cg1jc0VudGVyR2FtZTJTEgsKA3VpZBgBIAEoBRINCgV0b2tlbhgC",
-            "IAEoCRILCgNjaWQYAyABKAUiNgoNc2NFbnRlckdhbWUyUxILCgNlcnIYASAB",
-            "KAUSCwoDY2lkGAIgASgFEgsKA3VpZBgDIAEoBWIGcHJvdG8z"));
+            "Cg5zZXJMb2dpbi5wcm90bxIITmV0UHJvdG8aDENvbW1vbi5wcm90bxoPc2Vy",
+            "Q29tbW9uLnByb3RvIkYKDmNzQ2hlY2tMb2dpbjJTEhEKCWNvbm5lY3RJZBgB",
+            "IAEoBRIPCgdhY2NvdW50GAIgASgJEhAKCHBhc3N3b3JkGAMgASgJImYKDnNj",
+            "Q2hlY2tMb2dpbjJTEgsKA2VychgBIAEoBRIKCgJpcBgCIAEoCRIMCgRwb3J0",
+            "GAMgASgFEhEKCWNvbm5lY3RJZBgEIAEoBRILCgN1aWQYBSABKAUSDQoFdG9r",
+            "ZW4YBiABKAkiSQoRY3NSZWdpc3RBY2NvdW50MlMSEQoJY29ubmVjdElkGAEg",
+            "ASgFEg8KB2FjY291bnQYAiABKAkSEAoIcGFzc3dvcmQYAyABKAkiRAoRc2NS",
+            "ZWdpc3RBY2NvdW50MlMSCwoDZXJyGAEgASgFEhEKCWNvbm5lY3RJZBgCIAEo",
+            "BRIPCgdhY2NvdW50GAMgASgJIjgKDWNzRW50ZXJHYW1lMlMSCwoDdWlkGAEg",
+            "ASgFEg0KBXRva2VuGAIgASgJEgsKA2NpZBgDIAEoBSJlCg1zY0VudGVyR2Ft",
+            "ZTJTEgsKA2VychgBIAEoBRILCgNjaWQYAiABKAUSCwoDdWlkGAMgASgFEi0K",
+            "CnBsYXllckluZm8YBCABKAsyGS5OZXRQcm90by5QbGF5ZXJJbmZvUHJvdG9i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::NetProto.SerCommonReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::NetProto.CommonReflection.Descriptor, global::NetProto.SerCommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.csCheckLogin2S), global::NetProto.csCheckLogin2S.Parser, new[]{ "ConnectId", "Account", "Password" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.scCheckLogin2S), global::NetProto.scCheckLogin2S.Parser, new[]{ "Err", "Ip", "Port", "ConnectId", "Uid", "Token" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.csRegistAccount2S), global::NetProto.csRegistAccount2S.Parser, new[]{ "ConnectId", "Account", "Password" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.scRegistAccount2S), global::NetProto.scRegistAccount2S.Parser, new[]{ "Err", "ConnectId", "Account" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.csEnterGame2S), global::NetProto.csEnterGame2S.Parser, new[]{ "Uid", "Token", "Cid" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.scEnterGame2S), global::NetProto.scEnterGame2S.Parser, new[]{ "Err", "Cid", "Uid" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.scEnterGame2S), global::NetProto.scEnterGame2S.Parser, new[]{ "Err", "Cid", "Uid", "PlayerInfo" }, null, null, null)
           }));
     }
     #endregion
@@ -1030,6 +1032,7 @@ namespace NetProto {
       err_ = other.err_;
       cid_ = other.cid_;
       uid_ = other.uid_;
+      PlayerInfo = other.playerInfo_ != null ? other.PlayerInfo.Clone() : null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1073,6 +1076,17 @@ namespace NetProto {
       }
     }
 
+    /// <summary>Field number for the "playerInfo" field.</summary>
+    public const int PlayerInfoFieldNumber = 4;
+    private global::NetProto.PlayerInfoProto playerInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::NetProto.PlayerInfoProto PlayerInfo {
+      get { return playerInfo_; }
+      set {
+        playerInfo_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as scEnterGame2S);
@@ -1089,6 +1103,7 @@ namespace NetProto {
       if (Err != other.Err) return false;
       if (Cid != other.Cid) return false;
       if (Uid != other.Uid) return false;
+      if (!object.Equals(PlayerInfo, other.PlayerInfo)) return false;
       return true;
     }
 
@@ -1098,6 +1113,7 @@ namespace NetProto {
       if (Err != 0) hash ^= Err.GetHashCode();
       if (Cid != 0) hash ^= Cid.GetHashCode();
       if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (playerInfo_ != null) hash ^= PlayerInfo.GetHashCode();
       return hash;
     }
 
@@ -1120,6 +1136,10 @@ namespace NetProto {
         output.WriteRawTag(24);
         output.WriteInt32(Uid);
       }
+      if (playerInfo_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(PlayerInfo);
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1133,6 +1153,9 @@ namespace NetProto {
       }
       if (Uid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Uid);
+      }
+      if (playerInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlayerInfo);
       }
       return size;
     }
@@ -1150,6 +1173,12 @@ namespace NetProto {
       }
       if (other.Uid != 0) {
         Uid = other.Uid;
+      }
+      if (other.playerInfo_ != null) {
+        if (playerInfo_ == null) {
+          playerInfo_ = new global::NetProto.PlayerInfoProto();
+        }
+        PlayerInfo.MergeFrom(other.PlayerInfo);
       }
     }
 
@@ -1171,6 +1200,13 @@ namespace NetProto {
           }
           case 24: {
             Uid = input.ReadInt32();
+            break;
+          }
+          case 34: {
+            if (playerInfo_ == null) {
+              playerInfo_ = new global::NetProto.PlayerInfoProto();
+            }
+            input.ReadMessage(playerInfo_);
             break;
           }
         }

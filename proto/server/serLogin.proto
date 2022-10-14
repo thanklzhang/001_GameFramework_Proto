@@ -1,6 +1,7 @@
 syntax="proto3";
 package NetProto;
 
+import "Common.proto";
 import "serCommon.proto";
 
 message csCheckLogin2S
@@ -48,4 +49,6 @@ message scEnterGame2S
 	int32 err = 1;
 	int32 cid = 2;//gate 中 连接该用户 id
 	int32 uid = 3;
+	PlayerInfoProto playerInfo = 4;
+	
 }

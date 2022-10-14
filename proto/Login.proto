@@ -1,6 +1,8 @@
 syntax="proto3";
 package NetProto;
 
+import "Common.proto";
+
 message csCheckLogin
 {
 	string account = 1;
@@ -37,6 +39,7 @@ message csEnterGame
 message scEnterGame
 {
 	int32 err = 1;
+	PlayerInfoProto playerInfo = 2;
 }
 
 
