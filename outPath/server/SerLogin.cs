@@ -33,8 +33,10 @@ namespace NetProto {
             "BRIPCgdhY2NvdW50GAMgASgJIjgKDWNzRW50ZXJHYW1lMlMSCwoDdWlkGAEg",
             "ASgFEg0KBXRva2VuGAIgASgJEgsKA2NpZBgDIAEoBSJlCg1zY0VudGVyR2Ft",
             "ZTJTEgsKA2VychgBIAEoBRILCgNjaWQYAiABKAUSCwoDdWlkGAMgASgFEi0K",
-            "CnBsYXllckluZm8YBCABKAsyGS5OZXRQcm90by5QbGF5ZXJJbmZvUHJvdG9i",
-            "BnByb3RvMw=="));
+            "CnBsYXllckluZm8YBCABKAsyGS5OZXRQcm90by5QbGF5ZXJJbmZvUHJvdG8i",
+            "MAoUY3NSZWdpc3RlckdhdGVBZGRyMlMSCgoCaXAYASABKAkSDAoEcG9ydBgC",
+            "IAEoBSIwChRzY1JlZ2lzdGVyR2F0ZUFkZHIyUxIKCgJpcBgBIAEoCRIMCgRw",
+            "b3J0GAIgASgFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::NetProto.CommonReflection.Descriptor, global::NetProto.SerCommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -43,7 +45,9 @@ namespace NetProto {
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.csRegistAccount2S), global::NetProto.csRegistAccount2S.Parser, new[]{ "ConnectId", "Account", "Password" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.scRegistAccount2S), global::NetProto.scRegistAccount2S.Parser, new[]{ "Err", "ConnectId", "Account" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.csEnterGame2S), global::NetProto.csEnterGame2S.Parser, new[]{ "Uid", "Token", "Cid" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.scEnterGame2S), global::NetProto.scEnterGame2S.Parser, new[]{ "Err", "Cid", "Uid", "PlayerInfo" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.scEnterGame2S), global::NetProto.scEnterGame2S.Parser, new[]{ "Err", "Cid", "Uid", "PlayerInfo" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.csRegisterGateAddr2S), global::NetProto.csRegisterGateAddr2S.Parser, new[]{ "Ip", "Port" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::NetProto.scRegisterGateAddr2S), global::NetProto.scRegisterGateAddr2S.Parser, new[]{ "Ip", "Port" }, null, null, null)
           }));
     }
     #endregion
@@ -1207,6 +1211,296 @@ namespace NetProto {
               playerInfo_ = new global::NetProto.PlayerInfoProto();
             }
             input.ReadMessage(playerInfo_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class csRegisterGateAddr2S : pb::IMessage<csRegisterGateAddr2S> {
+    private static readonly pb::MessageParser<csRegisterGateAddr2S> _parser = new pb::MessageParser<csRegisterGateAddr2S>(() => new csRegisterGateAddr2S());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<csRegisterGateAddr2S> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NetProto.SerLoginReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csRegisterGateAddr2S() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csRegisterGateAddr2S(csRegisterGateAddr2S other) : this() {
+      ip_ = other.ip_;
+      port_ = other.port_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public csRegisterGateAddr2S Clone() {
+      return new csRegisterGateAddr2S(this);
+    }
+
+    /// <summary>Field number for the "ip" field.</summary>
+    public const int IpFieldNumber = 1;
+    private string ip_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Ip {
+      get { return ip_; }
+      set {
+        ip_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "port" field.</summary>
+    public const int PortFieldNumber = 2;
+    private int port_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Port {
+      get { return port_; }
+      set {
+        port_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as csRegisterGateAddr2S);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(csRegisterGateAddr2S other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Ip != other.Ip) return false;
+      if (Port != other.Port) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Ip.Length != 0) hash ^= Ip.GetHashCode();
+      if (Port != 0) hash ^= Port.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Ip.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Ip);
+      }
+      if (Port != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Port);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Ip.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Ip);
+      }
+      if (Port != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Port);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(csRegisterGateAddr2S other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Ip.Length != 0) {
+        Ip = other.Ip;
+      }
+      if (other.Port != 0) {
+        Port = other.Port;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Ip = input.ReadString();
+            break;
+          }
+          case 16: {
+            Port = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class scRegisterGateAddr2S : pb::IMessage<scRegisterGateAddr2S> {
+    private static readonly pb::MessageParser<scRegisterGateAddr2S> _parser = new pb::MessageParser<scRegisterGateAddr2S>(() => new scRegisterGateAddr2S());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<scRegisterGateAddr2S> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NetProto.SerLoginReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scRegisterGateAddr2S() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scRegisterGateAddr2S(scRegisterGateAddr2S other) : this() {
+      ip_ = other.ip_;
+      port_ = other.port_;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public scRegisterGateAddr2S Clone() {
+      return new scRegisterGateAddr2S(this);
+    }
+
+    /// <summary>Field number for the "ip" field.</summary>
+    public const int IpFieldNumber = 1;
+    private string ip_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Ip {
+      get { return ip_; }
+      set {
+        ip_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "port" field.</summary>
+    public const int PortFieldNumber = 2;
+    private int port_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Port {
+      get { return port_; }
+      set {
+        port_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as scRegisterGateAddr2S);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(scRegisterGateAddr2S other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Ip != other.Ip) return false;
+      if (Port != other.Port) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Ip.Length != 0) hash ^= Ip.GetHashCode();
+      if (Port != 0) hash ^= Port.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Ip.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Ip);
+      }
+      if (Port != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Port);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Ip.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Ip);
+      }
+      if (Port != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Port);
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(scRegisterGateAddr2S other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Ip.Length != 0) {
+        Ip = other.Ip;
+      }
+      if (other.Port != 0) {
+        Port = other.Port;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Ip = input.ReadString();
+            break;
+          }
+          case 16: {
+            Port = input.ReadInt32();
             break;
           }
         }

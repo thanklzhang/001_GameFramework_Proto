@@ -48,8 +48,8 @@ message BattleInitArg
 	BattleEntityInitArg entityInitArg = 5;
 	//地图信息(暂时不用)
 	//BattleMapInitArg mapInitArg = 6;
-	//活动 id
-	int32 activityId = 7;
+	//所属功能 id
+	int32 functionId = 7;
 	
 }
 

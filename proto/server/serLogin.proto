@@ -52,3 +52,15 @@ message scEnterGame2S
 	PlayerInfoProto playerInfo = 4;
 	
 }
+
+message csRegisterGateAddr2S
+{
+	string ip = 1;
+	int32 port = 2;
+}
+
+message scRegisterGateAddr2S
+{
+	string ip = 1;
+	int32 port = 2;
+}

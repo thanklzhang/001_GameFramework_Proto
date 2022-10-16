@@ -9,6 +9,7 @@ enum ProtoIDs
 	CheckLogin2S = 101;
 	EnterGame2S = 102;
 	RegistAccount2S = 103;
+	RegisterGateAddr2S = 104;
 	
 	ApplyCreateBattle2S = 201;
 	TransitionBattle2S = 301;
