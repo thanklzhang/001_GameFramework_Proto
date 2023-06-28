@@ -80,6 +80,9 @@ message BattleSkillProto
 {
 	int32 configId = 1;
 	int32 level = 2;
+	int32 maxCDTime = 3;
+	
+	int32 currCDTime = 4;
 }
 
 
@@ -218,7 +221,7 @@ message scNotifyEntityDir
 message scNotifyEntityUseSkill
 {
 	int32 guid = 1;
-	int32 resId = 2;
+	int32 skillConfigId = 2;
 	
 }
 
@@ -232,6 +235,28 @@ message scNotifyCreateSkillEffect
 	int32 followEntityGuid = 4;
 	int32 lastTime = 5;
 	bool isAutoDestroy = 6;
+	int32 effectPosType = 7;
+	
+	//如果是 buff 那么这个字段就不会为空
+	BuffInfoProto buffInfo = 8;
+	
+	int32 testSeq = 9;
+}
+
+message BuffInfoProto
+{
+	int32 guid = 1;
+	int32 buffConfigId = 2;
+	int32 stackCount = 3;
+	int32 currCDTime = 4;// /1000
+	int32 maxCDTime = 5;
+	int32 targetEntityGuid = 6;
+}
+
+//服务端通知 有 buff 信息更新 界面上的 实时buff 的状态信息需要用到
+message scNotifyUpdateBuffInfo
+{
+	repeated BuffInfoProto buffInfoList = 1;
 }
 
 //服务端通知 有技能效果开始移动
@@ -245,18 +270,27 @@ message scNotifySkillEffectStartMove
 	int32 moveSpeed = 6;
 }
 
-//服务器通知 技能效果更新信息
-message scNotifyBuffUpdate
-{
-	int32 guid = 1;
-	int32 lastTime = 2;
-	int32 buffLayer = 3;
-}
+////服务器通知 技能 buff 效果更新信息
+//message scNotifyBuffUpdate
+//{
+//	int32 guid = 1;
+//	int32 lastTime = 2;
+//	int32 buffLayer = 3;
+//}
 
 //服务端通知 有技能效果销毁
 message scNotifySkillEffectDestroy
 {
 	int32 effectGuid = 1;
+	int32 testSeq = 2;
+}
+
+//服务器通知 有技能信息发生改变
+message scNotifySkillInfoUpdate
+{
+	int32 entityGuid = 1;
+	int32 skillConfigId = 2;
+	BattleSkillProto skillInfo = 3;
 }
 
 message BattleEntityValueProto
@@ -264,6 +298,7 @@ message BattleEntityValueProto
 	// 1 当前生命值, 2 当前法力值
 	int32 type = 1;
 	int32 value = 2;
+	int32 fromEntityGuid = 3;
 }
 
 //同步实体数据值
@@ -311,6 +346,23 @@ message scNotifySetEntityShowState
 	repeated int32 guids = 1;
 	bool isShow = 2;
 }
+
+//服务器通知 有技能轨道开始
+message scNotifySkillTrackStart
+{
+	int32 trackConfigId = 1;
+    int32 releaserGuid = 2;
+    Vector3Proto targetPos = 3;
+    int32 targetEntityGuid = 4;
+}
+
+//服务器通知 有技能轨道结束
+message scNotifySkillTrackEnd
+{
+	int32 entityGuid = 1;
+	int32 skillTrackConfigId = 2;
+}
+
 
 //主动发起计算 一般是本地战斗的结算
 message csApplyBattleEnd

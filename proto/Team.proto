@@ -17,9 +17,8 @@ message TeamRoomPlayer
 	PlayerInfoProto playerInfo = 1;
 	bool isRoomMaster = 2;
 	bool isHasReady = 3;
-	int32 selectHeroGuid = 4;
-	int32 seat = 5;
-	
+	int32 seat = 4;
+	HeroProto hero = 5;
 }
 
 //获取组队房间列表
@@ -103,7 +102,8 @@ message scNotifyChangeTeamRoomInfo
 //在组队房间中玩家选择使用英雄
 message csSelectUseHeroInTeamRoom
 {
-	int32 heroGuid = 1;
+	int32 teamRoomId = 1;
+	int32 heroGuid = 2;
 }
 
 message scSelectUseHeroInTeamRoom

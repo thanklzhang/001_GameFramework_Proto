@@ -87,6 +87,10 @@ enum ProtoIDs
 	NotifySetEntityShowState = 3214;
 	NotifyEntityDir = 3215;
 	NotifyEntityMoveByPath = 3216;
+	NotifySkillInfoUpdate = 3217;
+	NotifyNotifyUpdateBuffInfo = 3218;
+	NotifySkillTrackStart = 3219;
+	NotifySkillTrackEnd = 3220;
 	
 	
 	
