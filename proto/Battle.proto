@@ -121,6 +121,14 @@ message scBattleReadyFinish
 	int32 err = 1;
 }
 
+message scNotifyPlayerReadyState
+{
+	int32 uid = 1;
+	bool isReady = 2;
+	int32 err = 3;
+}
+
+
 //战斗开始
 message csNotifyBattleStart
 {

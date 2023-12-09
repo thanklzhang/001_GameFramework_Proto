@@ -64,7 +64,8 @@ enum ProtoIDs
 	PlayerLoadProgress = 3002;
 	NotifyAllPlayerLoadFinish = 3003;
 	BattleReadyFinish = 3004;
-	NotifyBattleStart = 3005;
+	NotifyPlayerReadyState = 3005;
+	NotifyBattleStart = 3006;
 	
 	//玩家操作
 	MoveEntity = 3101;
